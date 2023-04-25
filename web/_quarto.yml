@@ -1,0 +1,51 @@
+project:
+  type: website
+
+website:
+  title: "E155 FA23"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - text: Labs
+        menu:
+        - text: Labs Overview
+          href: lab/
+        - text: Lab 1
+          href: lab/lab1/
+        - text: Lab 2
+          href: lab/lab2/
+        - text: Lab 3
+          href: lab/lab3/
+        - text: Lab 4
+          href: lab/lab4/
+        - text: Lab 5
+          href: lab/lab5/
+        - text: Lab 6
+          href: lab/lab6/
+        - text: Lab 7
+          href: lab/lab7/
+      - text: Lecture
+        href: lecture/
+      - text: Project
+        href: project/
+      - text: Resources
+        href: resources/
+      - text: Tutorials
+        menu:
+        - text: Lattice Radiant Installation
+          href: tutorials/lattice_radiant_installation/
+        - text: ice40 Project Setup
+          href: tutorials/lattice_radiant_ice40_ultraplus_project_setup/
+        - text: ModelSim Tutorial
+          href: tutorials/modelsim_simulation_tutorial/
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    toc: true
+    highlight-style: ally
+    monobackgroundcolor: transparent
+
+
+

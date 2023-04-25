@@ -1,0 +1,27 @@
+---
+title: 'Lecture'
+---
+
+Lecture slides and other activities can be found in a shared folder [here](). (g.hmc credentials required)
+
+* Lecture 1: Introduction and Analog Behavior of Digital Systems 
+* Lecture 2: Combinational and Sequential Logic
+* Lecture 3: Verilog 
+* Lecture 4: Synchronous Design
+* Lecture 5: FPGA Documentation
+* Lecture 6: Introduction to the STM32 L432KC MCU
+* Lecture 7: ARM Assembly Programming
+* Lecture 8: C Programming
+* Lecture 9: Clock Configuration
+* Lecture 10: Timers
+* Lecture 11: Serial Interfaces and SPI 
+* Lecture 12: UART and the Internet of Things
+* Lecture 13: PCB Design
+* Lecture 14: The Advanced Encryption Standard (AES)
+* Lecture 15: Final Project Kickoff and AES Verilog Examples
+* Lecture 16: Graphics and Displays
+* Lecture 17: Motors and Speakers
+* Lecture 18: Interrupts
+* Lecture 19: The Fast Fourier Transform 
+* Lecture 20: Direct Memory Access 
+* Lecture 21: Introduction to Real Time Operating Systems

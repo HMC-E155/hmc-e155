@@ -1,0 +1,42 @@
+---
+title: Project
+---
+
+# Final Project Information
+
+The requirements for the final project can be found in this [PDF](assets/project/E155 FA22 Final Project Requirements.pdf).
+
+Checkoffs for the proposal debrief, midpoint demo, and final checkoff can be scheduled on the Google Sheet found [here](https://docs.google.com/spreadsheets/d/1vudVTVcQ9prwv5bnaTyyDLmw-4NyFjTCIlvBK6RJycE/edit#gid=395088156).
+You should sign up for a slot as a team, not as individuals.
+
+All submissions for the project are as a team and should be submitted on Gradescope as group submissions.
+
+# Example Rubrics
+Below you can find general rubrics for the different project deliverables.
+While these rubrics are a good reference, they are subject to changes.
+
+* [Project Proposal Rubric](assets/project/Final Project Proposal Rubric.pdf)
+* [Status Report Rubric](assets/project/Status Report Rubric.pdf)
+* [Presentation Rubric](assets/project/Presentation Rubric.pdf)
+* [Project Checkoff and Report Rubric](assets/project/Project Checkoff Rubric.pdf)
+
+
+# Final Projects from Previous Years of E155
+* [Fall 2022 Project Reports](http://pages.hmc.edu/brake/class/e155/fa22/project)
+* [Fall 2019 Project Reports](http://pages.hmc.edu/harris/class/e155/projects19/index.html)
+* [Fall 2017 Project Reports](http://pages.hmc.edu/harris/class/e155/projects17/index.html)
+* [Fall 2016 Project Reports](http://pages.hmc.edu/harris/class/e155/projects16/index.html)
+* [Fall 2009 Project Reports](http://pages.hmc.edu/harris/class/e155/projects09/index.html)
+* [Fall 2006 Project Reports](http://pages.hmc.edu/harris/class/e155/projects06/index.html)
+* [Fall 2003 Project Reports](http://pages.hmc.edu/harris/class/e155/projects03/index.html)
+* [Fall 2002 Project Reports](http://pages.hmc.edu/harris/class/e155/projects02/index.html)
+* [Fall 2000 Project Reports](http://pages.hmc.edu/harris/class/e155/projects00/index.html)
+* [Fall 1999 Project Reports](http://pages.hmc.edu/harris/class/e155/projects99/index.html)
+
+
+# Vendors
+
+* [SparkFun](http://www.sparkfun.com/)
+* [Adafruit](http://www.adafruit.com/)
+* [Digikey](http://www.digikey.com/)
+* [Mouser](http://www.mouser.com/)

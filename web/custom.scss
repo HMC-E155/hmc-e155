@@ -1,0 +1,21 @@
+/*-- scss:defaults --*/
+
+// Custom code color
+$code-color: black;
+
+
+/*-- scss:rules --*/
+/* css styles */
+
+.center-table table {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hint-box {
+  border: 1px solid black;
+  background-color: #93DDBD;
+  padding: 10px;
+  padding-bottom: 0px;
+}

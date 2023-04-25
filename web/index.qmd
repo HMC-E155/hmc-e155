@@ -1,0 +1,14 @@
+---
+title: "E155 FA23"
+---
+
+![](assets/img/microps-logo.png){fig-align='center' width=25%}
+
+
+# Welcome to MicroPs!
+
+This website will be the main source for course material this semester.
+
+* Information regarding the course syllabus and schedule can be found [here](admin/).
+* A listing of labs and links to lab resources can be found on the [Lab page](lab/).
+* A number of helpful links and other resources can be found on the [Resources page](resources/).
