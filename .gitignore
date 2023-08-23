@@ -1,5 +1,3 @@
-# macOS
 .DS_Store
 
-# Quarto Site
-/web/.quarto/
+web/.quarto/
