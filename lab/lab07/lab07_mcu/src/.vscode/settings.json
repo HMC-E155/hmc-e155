@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "stm32l432xx.h": "c",
+    "stm32l432kc_gpio.h": "c"
+  }
+}
