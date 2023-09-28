@@ -27,5 +27,10 @@ main:
   ldr r3, =arr // Load the base address of RAM where the array is stored
   // YOUR CODE HERE
   
+
+
+  // Infinite loop which is entered after you finish sorting the array.
+loop_forever:
+    b loop_forever
   
 .size main, .-main
