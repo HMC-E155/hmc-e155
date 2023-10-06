@@ -11,32 +11,33 @@ void configurePLL() {
     // Use MSI as PLLSRC
 
     // TODO: Turn off PLL
-    RCC->CR &= 
+    RCC->CR &= ~(1 << 24);
     // TODO: Wait till PLL is unlocked (e.g., off)
     while ((RCC->CR >> 25 & 1) != 0);
 
     // Load configuration
     // TODO: Set PLL SRC to MSI
-    RCC->PLLCFGR |= 
-    RCC->PLLCFGR &= 
+    RCC->PLLCFGR |= (1 << 0);
+    RCC->PLLCFGR &= ~(1 << 1);
     // TODO: Set PLLN
     RCC->PLLCFGR &= ~(0b11111111 << 8); // Clear all bits of PLLN
-    RCC->PLLCFGR |= 
+    RCC->PLLCFGR |= (0b1010000 << 8); // |= 80
     // TODO: Set PLLM
     RCC->PLLCFGR &= ~(0b111 << 4);  // Clear all bits
-    RCC->PLLCFGR |= 
+    
 
     // TODO: Set PLLR
-    RCC->PLLCFGR &= 
+    RCC->PLLCFGR &= ~(1 << 26);
+    RCC->PLLCFGR |= (1 << 25);
     
     // TODO: Enable PLLR output
-    RCC->PLLCFGR |= 
+    RCC->PLLCFGR |= (1 << 24);
 
     // TODO: Enable PLL
-    RCC->CR |= 
+    RCC->CR |= (1 << 24);
     
     // TODO: Wait until PLL is locked
-    while();
+    while ((RCC->CR >> 25 & 1) != 1);
 }
 
 void configureClock(){
