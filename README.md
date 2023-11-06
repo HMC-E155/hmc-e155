@@ -5,6 +5,6 @@ See the [course website](https://pages.hmc.edu/brake/class/e155/) for more detai
 
 # Repository Structure
 
-* [tutorials](/tutorials/) contains source code for various tutorials related to the course.
-Some of these we will use during class time while others are provided for your reference.
-* [web](/web/) contains the source code for the course website and is included here for tracking purposes.
+- [board](./board/) contains KiCad design files for the motherboard and breadboard adapter.
+* [demos](./demos/) contains source code for the in-class demos and other miscellaneous example code.
+* [lab](./lab/) contains starter code for the labs as applicable.
