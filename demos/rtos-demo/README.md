@@ -10,6 +10,9 @@
 6. Modify `FreeRTOS.h` to include device-specific libraries (e.g., CMSIS)
 7. Run examples.
 
+## Setup Loom
+
+<div style="position: relative; padding-bottom: 64.98194945848375%; height: 0;"><iframe src="https://www.loom.com/embed/1d36fd2235a8419096f5672c5d008b35?sid=47dc52b9-050a-4b99-966c-cf9902b35b9a" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ## Resources
 
