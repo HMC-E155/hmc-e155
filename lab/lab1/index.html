@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>E155 FA23 - Lab 1: FPGA and MCU Setup and Testing</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">E155 FA23</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../syllabus/"> 
+<span class="menu-text">Syllabus</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-labs" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Labs</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-labs">    
+        <li>
+    <a class="dropdown-item" href="../../lab/">
+ <span class="dropdown-text">Labs Overview</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/specs/">
+ <span class="dropdown-text">Lab Specs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/lab1/">
+ <span class="dropdown-text">Lab 1</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/lab2/">
+ <span class="dropdown-text">Lab 2</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/lab3/">
+ <span class="dropdown-text">Lab 3</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/lab4/">
+ <span class="dropdown-text">Lab 4</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/lab5/">
+ <span class="dropdown-text">Lab 5</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/lab6/">
+ <span class="dropdown-text">Lab 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lab/lab7/">
+ <span class="dropdown-text">Lab 7</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../../lecture/"> 
+<span class="menu-text">Lecture</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../project/"> 
+<span class="menu-text">Project</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../resources/"> 
+<span class="menu-text">Resources</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tutorials" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tutorials</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tutorials">    
+        <li>
+    <a class="dropdown-item" href="../../tutorials/video-tutorials/">
+ <span class="dropdown-text">Video Tutorials</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tutorials/lattice_radiant_installation/">
+ <span class="dropdown-text">Lattice Radiant Installation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tutorials/lattice_radiant_ice40_ultraplus_project_setup/">
+ <span class="dropdown-text">ice40 Project Setup</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tutorials/modelsim_simulation_tutorial/">
+ <span class="dropdown-text">ModelSim Tutorial</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tutorials/segger_embedded_studio_setup">
+ <span class="dropdown-text">SEGGER Embedded Studio Tutorial</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
+  <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
+  <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
+  <li><a href="#specs" id="toc-specs" class="nav-link" data-scroll-target="#specs">Specs</a>
+  <ul class="collapse">
+  <li><a href="#lab-specific-specifications" id="toc-lab-specific-specifications" class="nav-link" data-scroll-target="#lab-specific-specifications">Lab-specific Specifications</a></li>
+  <li><a href="#general-specifications" id="toc-general-specifications" class="nav-link" data-scroll-target="#general-specifications">General Specifications</a></li>
+  </ul></li>
+  <li><a href="#before-you-start" id="toc-before-you-start" class="nav-link" data-scroll-target="#before-you-start">Before You Start</a></li>
+  <li><a href="#background" id="toc-background" class="nav-link" data-scroll-target="#background">Background</a></li>
+  <li><a href="#nucleo-l432kc-development-board" id="toc-nucleo-l432kc-development-board" class="nav-link" data-scroll-target="#nucleo-l432kc-development-board">Nucleo-L432KC Development Board</a>
+  <ul class="collapse">
+  <li><a href="#programming" id="toc-programming" class="nav-link" data-scroll-target="#programming">Programming</a></li>
+  </ul></li>
+  <li><a href="#upduino-v3.1-fpga-development-board" id="toc-upduino-v3.1-fpga-development-board" class="nav-link" data-scroll-target="#upduino-v3.1-fpga-development-board">UPduino v3.1 FPGA Development Board</a>
+  <ul class="collapse">
+  <li><a href="#digital-design-synthesis-and-programming" id="toc-digital-design-synthesis-and-programming" class="nav-link" data-scroll-target="#digital-design-synthesis-and-programming">Digital Design Synthesis and Programming</a></li>
+  </ul></li>
+  <li><a href="#e155-fa22-development-board" id="toc-e155-fa22-development-board" class="nav-link" data-scroll-target="#e155-fa22-development-board">E155 FA22 Development Board</a></li>
+  <li><a href="#assembling-the-board" id="toc-assembling-the-board" class="nav-link" data-scroll-target="#assembling-the-board">Assembling the Board</a></li>
+  <li><a href="#assembly-tips" id="toc-assembly-tips" class="nav-link" data-scroll-target="#assembly-tips">Assembly Tips</a></li>
+  <li><a href="#suggested-soldering-order" id="toc-suggested-soldering-order" class="nav-link" data-scroll-target="#suggested-soldering-order">Suggested Soldering Order</a></li>
+  <li><a href="#powering-the-board" id="toc-powering-the-board" class="nav-link" data-scroll-target="#powering-the-board">Powering the Board</a>
+  <ul class="collapse">
+  <li><a href="#powering-through-vin" id="toc-powering-through-vin" class="nav-link" data-scroll-target="#powering-through-vin">Powering through VIN</a></li>
+  <li><a href="#powering-via-usb" id="toc-powering-via-usb" class="nav-link" data-scroll-target="#powering-via-usb">Powering via USB</a></li>
+  </ul></li>
+  <li><a href="#testing-the-boards" id="toc-testing-the-boards" class="nav-link" data-scroll-target="#testing-the-boards">Testing the Boards</a></li>
+  <li><a href="#fpga-design" id="toc-fpga-design" class="nav-link" data-scroll-target="#fpga-design">FPGA Design</a>
+  <ul class="collapse">
+  <li><a href="#design-and-synthesis-in-radiant" id="toc-design-and-synthesis-in-radiant" class="nav-link" data-scroll-target="#design-and-synthesis-in-radiant">Design and Synthesis in Radiant</a></li>
+  <li><a href="#logic-simulation-in-modelsim" id="toc-logic-simulation-in-modelsim" class="nav-link" data-scroll-target="#logic-simulation-in-modelsim">Logic Simulation in ModelSim</a></li>
+  <li><a href="#pin-assignment" id="toc-pin-assignment" class="nav-link" data-scroll-target="#pin-assignment">Pin Assignment</a></li>
+  <li><a href="#seven-segment-display-circuit" id="toc-seven-segment-display-circuit" class="nav-link" data-scroll-target="#seven-segment-display-circuit">Seven Segment Display Circuit</a></li>
+  <li><a href="#generating-the-fpga-configuration-files" id="toc-generating-the-fpga-configuration-files" class="nav-link" data-scroll-target="#generating-the-fpga-configuration-files">Generating the FPGA Configuration Files</a></li>
+  <li><a href="#what-to-turn-in" id="toc-what-to-turn-in" class="nav-link" data-scroll-target="#what-to-turn-in">What to Turn In</a></li>
+  <li><a href="#faq-and-hints" id="toc-faq-and-hints" class="nav-link" data-scroll-target="#faq-and-hints">FAQ and Hints</a></li>
+  <li><a href="#always-very-curious" id="toc-always-very-curious" class="nav-link" data-scroll-target="#always-very-curious">Always Very Curious…</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lab 1 Specifications</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>In this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.</p>
+</section>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
+<p>By the end of this lab you will have…</p>
+<ul>
+<li>Assembled your development board for the class and tested out your MCU and FPGA boards.</li>
+<li>Written a Verilog module to control LEDs and a 7-segment display.</li>
+<li>Programmed the FPGA with Verilog code.</li>
+<li>Gained confidence in building, assembling, testing, and debugging circuits.</li>
+<li>Interfaced a 7-segment display to the board.</li>
+</ul>
+</section>
+<section id="requirements" class="level2">
+<h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
+<p>Follow the steps in this guide to test your FPGA and MCU boards. Write some Verilog code to exercise the FPGA using the switches, LEDs, and a 7-segment display to ensure your board is operational. Simulate and synthesize your code, then upload it to the flash memory and re-test the board. Hook up a 7-segment display and demonstrate that it works.</p>
+</section>
+<section id="resources" class="level2">
+<h2 class="anchored" data-anchor-id="resources">Resources</h2>
+<ul>
+<li><a href="https://github.com/HMC-E155/HMC-E155/tree/main/lab/lab01">Starter Code from GitHub Repo</a></li>
+</ul>
+</section>
+<section id="specs" class="level2">
+<h2 class="anchored" data-anchor-id="specs">Specs</h2>
+<section id="lab-specific-specifications" class="level3">
+<h3 class="anchored" data-anchor-id="lab-specific-specifications">Lab-specific Specifications</h3>
+<details>
+<section id="proficiency" class="level4">
+<h4 class="anchored" data-anchor-id="proficiency">Proficiency</h4>
+<ul class="task-list">
+<li><label><input type="checkbox">Development board is fully assembled (e.g., all parts soldered)</label></li>
+<li><label><input type="checkbox">Verilog module to control LEDs and a 7-segment display written</label></li>
+<li><label><input type="checkbox">FPGA programmed with Verilog code.</label></li>
+<li><label><input type="checkbox">7-segment display can display all sixteen hexadecimal digits from <code>0x0</code> through <code>0xF</code></label></li>
+<li><label><input type="checkbox">All digits are unique (e.g., <code>0x6</code> and <code>0xb</code> are different shapes)</label></li>
+<li><label><input type="checkbox">DIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.)</label></li>
+<li><label><input type="checkbox">LEDs display the specified logic operations properly.</label></li>
+</ul>
+</section>
+<section id="excellence" class="level4">
+<h4 class="anchored" data-anchor-id="excellence">Excellence</h4>
+<ul class="task-list">
+<li><label><input type="checkbox">Calculations provided to demonstrate that the current draw for each segment in the seven-segment display is within recommended operating conditions.</label></li>
+<li><label><input type="checkbox">ModelSim simulation (either manually force or automatic testbench) to demonstrate that the design is working properly.</label></li>
+<li><label><input type="checkbox">All digits are equally bright, regardless of the number of segments illuminated.</label></li>
+</ul>
+</section></details>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="general-specifications" class="level3">
+<h3 class="anchored" data-anchor-id="general-specifications">General Specifications</h3>
+<details>
+<section id="proficiency-1" class="level4">
+<h4 class="anchored" data-anchor-id="proficiency-1">Proficiency</h4>
+<section id="general-schematic-specifications" class="level5">
+<h5 class="anchored" data-anchor-id="general-schematic-specifications">General Schematic Specifications</h5>
+<ul class="task-list">
+<li><label><input type="checkbox">All pin names labeled</label></li>
+<li><label><input type="checkbox">All pin numbers labeled</label></li>
+<li><label><input type="checkbox">Crossing wires clearly identified as junction or unconnected</label></li>
+<li><label><input type="checkbox">Neat layout (e.g., clear organization and spacing)</label></li>
+<li><label><input type="checkbox">All parts labeled with part number</label></li>
+<li><label><input type="checkbox">All component values present</label></li>
+</ul>
+<p><strong>Block Diagram</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Block diagram present with one block per SystemVerilog module</label></li>
+<li><label><input type="checkbox">Each block includes all input and output signals</label></li>
+</ul>
+<p><strong>HDL &amp; Code Specifications</strong></p>
+<p><em>General Formatting</em></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Descriptive filename (e.g., <code>lab2_jb.sv</code>)</label></li>
+<li><label><input type="checkbox">Descriptive variable names</label></li>
+<li><label><input type="checkbox">Neat formatting (e.g., standard indentation, consistent formatting for variable names (kebab-case/snake_case/camelCase/PascalCase ))</label></li>
+<li><label><input type="checkbox">Descriptive and clear function/module names</label></li>
+</ul>
+<p><em>Comments</em></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Comments to indicate the purpose of each function/module</label></li>
+</ul>
+<p><strong>Lab Writeup/Summary</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Brief (e.g., 3-5 sentence) description of the main goals of the assignment and what was done.</label></li>
+<li><label><input type="checkbox">Explanation of design approach. How did you go about designing and implementing the design?</label></li>
+<li><label><input type="checkbox">Explanation of testing approach. How did you verify your design was behaving as expected?</label></li>
+<li><label><input type="checkbox">Statement of whether the design meets all the requirements. If not, list the shortcomings.</label></li>
+<li><label><input type="checkbox">Number of hours spent working on the lab are included.</label></li>
+<li><label><input type="checkbox">Writeup contains minimal spelling or grammar issues and any errors do not significantly detract from clarity of the writeup.</label></li>
+<li><label><input type="checkbox">(Optional) List commments or suggestions on what was particularly good about the assignment or what you think needs to change in future versions.</label></li>
+</ul>
+</section>
+</section>
+<section id="excellence-1" class="level4">
+<h4 class="anchored" data-anchor-id="excellence-1">Excellence</h4>
+<p><strong>General Schematic Specifications </strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Standard symbols used for all components where applicable</label></li>
+<li><label><input type="checkbox">Signals “flow” from left to right where possible (e.g., inputs on left hand side, outputs on right hand side)</label></li>
+<li><label><input type="checkbox">Title block with author name, title, and date</label></li>
+</ul>
+<p><strong>HDL &amp; Code Specifications</strong></p>
+<p><em>General Formatting</em></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Name, email, and date at the top of every file</label></li>
+<li><label><input type="checkbox">Comment at the top of each source code file to describe what is in it</label></li>
+<li><label><input type="checkbox">Clear and organized hierarchy (e.g., deliniation between top level modules and submodules)</label></li>
+</ul>
+<p><em>Testbenches</em></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Testbenches written for each individual module to demonstrate proper operation</label></li>
+<li><label><input type="checkbox">Testbench output included in the report</label></li>
+</ul>
+<p><strong>Lab Writeup/Summary</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox">Writeup is free of spelling and grammar issues</label></li>
+</ul>
+</section></details>
+<p><a href="../../lab/lab1/specs.html" target="blank">Open specifications in new tab.</a></p>
+</section>
+
+
+<section id="before-you-start" class="level2">
+<h2 class="anchored" data-anchor-id="before-you-start">Before You Start</h2>
+<p>Before you start working on this lab, you should familiarize yourself with the documentation for both the UPduino v3.1 and Nucleo-L432KC boards. The website has links for the UPduino v3.1 User Guide and the Nucleo-L432KC User Manuals on the Resources tab. These two documents contain information that will be helpful for answering questions that you may have during the course of this lab.</p>
+</section>
+<section id="background" class="level2">
+<h2 class="anchored" data-anchor-id="background">Background</h2>
+<p>In the 1980’s and 1990’s, digital design projects were built from a truckload of chips, each containing a few logic gates such as 74xx series logic gates or simple programmable array logic chips (PALs). Such projects involve placing and wiring together dozens of chips on a breadboard. It was easy to make a wiring mistake or burn out a chip and spend hours tracking down the problem. Now you can perform all of your digital logic on a single field-programmable gate array (FPGA) to greatly reduce the necessary wiring and number of chips. Later in the course, you will use the Cortex-M4 microcontroller to write programs in assembly language and C that can interface with external hardware and the FPGA.</p>
+</section>
+<section id="nucleo-l432kc-development-board" class="level2">
+<h2 class="anchored" data-anchor-id="nucleo-l432kc-development-board">Nucleo-L432KC Development Board</h2>
+<p>The Nucleo-L432KC development board provides a convenient platform to test and develop embedded systems applications. The board is focused around an STM32L432KC MCU and provides voltage regulators to provide power to the chip, various breakout headers which allow access to the pins of the microcontroller chip, a reset button and user input button, configuration jumpers, and an embedded ST-LINK programmer/debugger.</p>
+<section id="programming" class="level3">
+<h3 class="anchored" data-anchor-id="programming">Programming</h3>
+<p>The STM32L432KC has an embedded ST-LINK/V2-1 programmer and debugger as described in the Nucleo-32 User Manual. The main purpose of the ST-LINK is to provide the ability to interface with the serial wire debug (SWD) interface of the MCU via USB.</p>
+<p>There are a variety of integrated development environments (IDEs) which can be used to interact with the device including PlatformIO, Keil μVision, and SEGGER Embedded Studio. The IDEs provide a helpful wrapper around compiler toolchains such as GNU Compiler Collection (GCC) toolchain to facilitate easy programming and debugging. In this course you are welcome to use any IDE you would like, although instruction and support will be focused around SEGGER Embedded Studio which is based on the GCC toolchain.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+</section>
+</section>
+<section id="upduino-v3.1-fpga-development-board" class="level2">
+<h2 class="anchored" data-anchor-id="upduino-v3.1-fpga-development-board">UPduino v3.1 FPGA Development Board</h2>
+<p>The UPduino v3.1 is developed by tinyvision.ai and designed around a Lattice Semiconductor UP5K field programmable gate array (FPGA). Section 5.3 of the iCE40 UltraPlus Family Data Sheet (FPGA-DS-02008-2.0) explains the naming of the chip.</p>
+<div id="fig-ic40-part-number-description" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ic40-part-number-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ice40_part_number_description.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ic40-part-number-description-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: ice40 Part Number Description
+</figcaption>
+</figure>
+</div>
+<p>The Lattice UP5K is very similar to the Cyclone IV architecture that is used to introduce FPGAs in E85. At its root, the FPGA consists of Logic Cells (Lattice’s version of the Intel/Altera Logic Elements you learned about in E85) which can be internally connected within Programmable Logic Blocks (PLBs) within the FPGA to form digital circuits. Each Logic Cell (LC) consists of a 4-input look-up table (LUT) and a programmable D flip-flop, along with additional clock control and carry logic. Figure 3.2 from the FPGA datasheet shows the basic architecture of a PLB and LC.</p>
+<div id="fig-ice40-plb-block-diagram" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ice40-plb-block-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ice40_plb_block_diagram.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ice40-plb-block-diagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: ice40 PLB Block Diagram.
+</figcaption>
+</figure>
+</div>
+<p>The UP5K on our UPduino v3.1 board is the 48-pin QFN package. As you can see from the table, it contains 5280 logic cells, 30 Embedded Block Ram (EBR) Memory Blocks of 4 Kbits each, 4 256-bit Single Port synchronous RAM Memory Blocks, and an on-board high-frequency (48 MHz) and low-frequency (10 kHz) oscillator.</p>
+<div id="fig-ice40-resource-table" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ice40-resource-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ice40_resource_table.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ice40-resource-table-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: ice40 Resource Table.
+</figcaption>
+</figure>
+</div>
+<section id="digital-design-synthesis-and-programming" class="level3">
+<h3 class="anchored" data-anchor-id="digital-design-synthesis-and-programming">Digital Design Synthesis and Programming</h3>
+<p>The FPGA is programmed using the onboard programmer via the synthesis tool Lattice Radiant. After setting up and compiling the Radiant project, Radiant will generate bitstream files which are used to configure the FPGA.</p>
+<p>More details will be provided later in this lab writeup.</p>
+</section>
+</section>
+<section id="e155-fa22-development-board" class="level2">
+<h2 class="anchored" data-anchor-id="e155-fa22-development-board">E155 FA22 Development Board</h2>
+<p>In this lab you will assemble a custom printed circuit board which hosts the MCU and FPGA boards. The board has several features that will be convenient for developing embedded systems such as:</p>
+<ul>
+<li>Pins which can be directly routed from the MCU to the FPGA via the board</li>
+<li>Extension headers for the mikroBUS and 6-pin PMOD standard</li>
+<li>User configurable LEDs, pushbuttons, and slider switches.</li>
+<li>Header to route pins via a ribbon cable to a separate breadboard adapter PCB which can be inserted into a solderless breadboard.</li>
+</ul>
+<div id="fig-board-sections" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-board-sections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/board_sections.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-board-sections-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Annotated sections of the development board.
+</figcaption>
+</figure>
+</div>
+<p>The board has several main sections that you should make yourself aware of. They are annotated in the image above.</p>
+<ul>
+<li><strong>Voltage Regulators and Power Terminal</strong>: A +5 V (NCP1117DT50RKG) and +3.3 V (NCP1117DT33T5G) low-dropout (LDO) voltage regulator which is used to regulate the input provided via the power terminal on VIN. Make sure to check with the schematic to ensure that you put the regulators in their proper places. See <a href="#powering-the-board">Powering the Board</a> for more details.</li>
+<li><strong>FPGA, MCU, mikroBUS, and PMOD sockets: </strong>These sockets are populated with female headers for the MCU, FPGA, and other extension sockets to be plugged into.</li>
+<li><strong>Reset Push Buttons: </strong>The reset pushbuttons are connected to the reset inputs on the MCU and FPGA respectively. The MCU reset button will cause the code to begin execution from the first instruction. The FPGA reset button causes the FPGA to reconfigure itself from the on-board RAM which stores the configuration file for the design you have uploaded.</li>
+<li><strong>Configuration Jumpers</strong>: The configuration jumpers on the board allow you several options to set the power and signal connections for the MCU and FPGA. J2, J3, and J4 control the mikroBUS reset signal and the power for the FPGA and MCU boards respectively. The mikroBUS reset signal can also be connected to MCU pin PA12 to enable the MCU to reset the connected peripheral via software. The configuration jumper J5 is a 2x8 header with MCU pins on the left hand side and FPGA pins on the right hand side. Note that on the 2023 version of the board, J5 has been replaced with an 8-pin DIP switch with the reference designator SW7. The functionality however, remains the same as the jumper. By attaching a jumper between the pins in the same row, the MCU pin on the left side of the jumper can be directly routed to the FPGA pin on the right hand side via traces on the PCB. This allows for convenient and high-fidelity interfaces between the MCU and the FPGA without the need for external wires.</li>
+<li><strong>Ribbon Cable Connector</strong>: The ribbon cable connector is used to route a subset of the MCU and FPGA pins out to a cable which connects to the breadboard adapter board.</li>
+<li><strong>MCU, FPGA, and Slide Buttons: </strong>The push and slide buttons on the board are routed to pins on the MCU and FPGA in order to provide on-board options to toggle GPIO pins on the respective devices. Note that all of these buttons are configured as active low (i.e., closing the switch connects the pin of the device to ground) without any hardware pullup resistors. In order to use them, you must configure the internal pullup resistors on the MCU or FPGA in order to avoid floating logic levels.</li>
+</ul>
+</section>
+<section id="assembling-the-board" class="level2">
+<h2 class="anchored" data-anchor-id="assembling-the-board">Assembling the Board</h2>
+<p>In this section you will walk through the steps to assemble your board. The PCB has both through hole technology (THT) and surface mount technology (SMT) parts. SMT parts are generally preferred on PCBs since they are more compact and easier for machines to solder although THT parts are typically easier for beginners to solder. If you haven’t done much (or any!) SMT soldering before, don’t worry! One of the points of this lab is to give you a chance to develop this skill!</p>
+<p>All the parts you need to build your board are provided in your kit bag. Typically, it is easiest to start with the SMT parts before soldering the THT parts since the board will lay flat. So we’ll start by soldering the SMT components.</p>
+</section>
+<section id="assembly-tips" class="level2">
+<h2 class="anchored" data-anchor-id="assembly-tips">Assembly Tips</h2>
+<p>Soldering is a skill that you need to practice just like anything else. The most important thing to remember when soldering is that it is roughly 100x easier to solder than to desolder a component. So, whenever possible, make sure that you align the component correctly before soldering all the pins. Often the best way to do this is to solder a single pin on one side and then confirm that the component is correctly aligned before soldering the rest of the pins. If something is misaligned, then this will make it easy to correct since you only will need to reflow a single solder joint. A few additional tips:</p>
+<ul>
+<li>Soldering often will make you wish you had another hand or two. Soldering SMT components in particular can be a bit tricky because you need to hold the component with tweezers to align it. A good strategy is to first melt a little bit of solder on one of the pads and then grab the component with tweezers while holding the iron in your other hand to reflow the solder and align it.</li>
+<li>When soldering THT headers like those used for the sockets, make sure that the headers are oriented correctly (most of the time perpendicular to the PCB surface). One tip is to insert a strip of male headers into a breadboard and then attach the female headers and set the PCB upside down on top of the male headers to solder them. If you do end up making a mistake and need to desolder a strip of header pins, the plastic shroud can be removed in order to let you pull out individual pins. See this <a href="https://youtu.be/bQzbZEsPGD0?t=160">YouTube video</a> for an example. Although in the video he shows the example for a male header pin strip, you can do the same thing with a female strip as well.</li>
+</ul>
+</section>
+<section id="suggested-soldering-order" class="level2">
+<h2 class="anchored" data-anchor-id="suggested-soldering-order">Suggested Soldering Order</h2>
+<p>Below is a recommended soldering order.</p>
+<ol type="1">
+<li>Solder the voltage regulators. Put a bit of solder on the big square pad and reflow while bringing the regulator on top in order to solder it. You can apply heat to the pad via the metal edge at the top of the regulator.</li>
+</ol>
+<div id="fig-voltage-regulators" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-voltage-regulators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/board_vregs.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-voltage-regulators-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Voltage regulator soldering procedure.
+</figcaption>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Prepare to solder the remaining SMT components (resistors, capacitors, and LEDs) by applying a small amount of solder to one pad of the SMT footprints R1-R11, C1-C4, and D1-D8..</li>
+<li>Solder the decoupling (also known as bypass) capacitors C1-C4 around the regulators. These are used to smooth out any transients and ensure smooth, constant voltages. These capacitors have no polarity, so either way is fine.</li>
+<li>Next, solder the resistors on the board. Pay careful attention to make sure that you solder the correct resistors by referring to the board schematic (available on the course website).</li>
+<li>Next solder the LEDs. The LEDs are polarized, so you’ll need to make sure to solder them the right direction or they won’t work. There is an arrow on the bottom of the package which indicates the direction of the current flow from the anode to the cathode. Again, refer to the schematic for proper alignment. When looking at the PCB with the text facing upright, the cathode should go on the left hand side (connected to its current limiting resistor). There are three different color LEDs. D1 is red (VIN), D2-D5 are green (connected to the MCU), and D6-D8 are blue (connected to the FPGA). After finishing this step, you are finished with all the SMT components!</li>
+</ol>
+<div id="fig-surface-mount-soldering" class="quarto-figure quarto-figure-center quarto-float anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-surface-mount-soldering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/board_surface_mount_soldering.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:50.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-surface-mount-soldering-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: LED and current limiting resistors.
+</figcaption>
+</figure>
+</div>
+<ol start="6" type="1">
+<li>Now it’s time to tackle the THT components. Put the components into their respective places and solder them in. Pay careful attention to ensure that the female header strips are correctly aligned and perpendicular to the board. You will need to snap off 2- and 3-pin headers from the provided 40-pin header strip in order to populate J2-J4. The easiest way to do this is to use a pair of needle nose pliers to snap off the right number of pins.</li>
+<li>After finishing the main development board, follow the same procedure to assemble the breadboard adapter PCB.</li>
+</ol>
+<div id="fig-ribbon-cable" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ribbon-cable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ribbon-cable" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-ribbon-cable-alignment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-ribbon-cable-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ribbon_cable_alignment.png" class="img-fluid figure-img" data-ref-parent="fig-ribbon-cable">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ribbon-cable-alignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Make sure the notches are both pointing the same direction.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ribbon-cable" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-ribbon-cable-connector" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-ribbon-cable-connector-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ribbon_cable_alignment_2.png" class="img-fluid figure-img" data-ref-parent="fig-ribbon-cable">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ribbon-cable-connector-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) The triangle on the connector should match with the red wire in the ribbon cable.
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-ribbon-cable" style="flex-basis: 33.3%;justify-content: flex-start;">
+<div id="fig-ribbon-cable-crimp" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-ribbon-cable-crimp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ribbon_cable_crimp.jpg" class="img-fluid figure-img" data-ref-parent="fig-ribbon-cable">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-ribbon-cable-crimp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(c) Crimping alignment.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ribbon-cable-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Ribbon cable alignment procedure.
+</figcaption>
+</figure>
+</div>
+<p>Use the included insulation-displacement contact (IDC) ribbon cable connectors and the spool of ribbon cable in the lab to make yourself a short (~6-12”) cable. You have probably done this before in E80, but if you don’t remember how, see the video <a href="https://www.youtube.com/watch?v=4pDRrrpAcGQ">here</a>. Cut the cable to length with the flush cutters in the toolbox and use either a vise or the cable assembly tool found in the E155 cabinet. Please make sure to put it back after you are finished. If you can’t find it around the lab, ask an instructor.</p>
+<p>Finally, solder the 20-pin male headers and 2x20 pin cable connector onto the breadboard adapter PCB, making sure that the pins are all correctly aligned and perpendicular to the PCB.</p>
+<p>Congratulations, you are now finished assembling your board and ready to test it! The photo below shows an example of what the board should look like when it is finished.</p>
+<div id="fig-board-assembled" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-board-assembled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/board_assembled.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-board-assembled-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Fully assembled development board.
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="powering-the-board" class="level2">
+<h2 class="anchored" data-anchor-id="powering-the-board">Powering the Board</h2>
+<p>There are three different ways to power the components on the development board: (1) via the VIN power input, (2) via the FPGA’s USB connection, and (3) via the MCU’s USB connection. In this section we will walk through the various ways to power the board to make sure that you are aware of how to properly power the board and avoid any issues which might damage the components on board.</p>
+<p>The +5 V and +3.3 V voltage regulators provide power for the various components. All logic levels are +3.3 V unless stated otherwise. So, the +3.3 V supply is used to power the various buttons on the board.</p>
+<section id="powering-through-vin" class="level3">
+<h3 class="anchored" data-anchor-id="powering-through-vin">Powering through VIN</h3>
+<p>To power through VIN, apply a voltage to the power screw terminal between VIN and GND. The <a href="https://www.onsemi.com/pdf/datasheet/ncp1117-d.pdf">NCP117 series</a> can accept voltages up to +20 V but in most scenarios you will likely want to use a VIN between +6-12 V. Be aware that VIN should always be more than +5 V for both regulators to function properly. When powering via VIN, the jumpers J3 (FPGA_+5V) and J4 (MCU_+5V) should be shorted in order to apply the +5 V output from the regulator to the MCU and FPGA +5 V pin.</p>
+</section>
+<section id="powering-via-usb" class="level3">
+<h3 class="anchored" data-anchor-id="powering-via-usb">Powering via USB</h3>
+<p>It is also possible to power the board via a USB connection to either the MCU or FPGA board. Each board has an onboard voltage regulator to create a stabilized +5 V output on the boards respective +5 V pins. Assuming J3 and J4 are shorted, this +5 V output from whichever board is connected to USB power is fed back to the +5 V line (which is also the output of the +5 V regulator) and thus powers the other components connected to that net.</p>
+<div class="hint-box">
+<p><strong>Testing Voltage Regulators</strong>: Before connecting your MCU and FPGA boards, check the voltage regulators are on correctly by connecting to a lab DC power supply using the screw terminals and using a multimeter to confirm that the +3.3 V rail is +3.3 V and the +5 V rail is +5 V. If you read +5 V on the +3.3 V or vice versa, you have installed the regulators in the wrong place and need to swap them. If you read a low voltage (less than ~0.1 V), you likely have a bad solder joint on the back pad of the respective regulator and need to reflow the solder joint to make a better connection.</p>
+</div>
+</section>
+</section>
+<section id="testing-the-boards" class="level2">
+<h2 class="anchored" data-anchor-id="testing-the-boards">Testing the Boards</h2>
+<p>To test the boards, you will upload a simple design to the FPGA which toggles an LED on and off and some code on the MCU to read in the toggling GPIO pin and echo is back to the FPGA. This will ensure that the board is working properly and that you have good communication between the two devices.</p>
+<p>To familiarize yourself with how to program the FPGA using Lattice Radiant, see the <a href="../../tutorials/lattice_radiant_installation/">Lattice Radiant iCE40 UltraPlus Project Setup</a> tutorial. This tutorial has information about how to create a project in Radiant and how to synthesize and upload designs to your FPGA board.</p>
+<p>After working through the tutorial, download the Radiant project file <code>fpga_dev_board_test.zip</code> under the Lab 1 subfolder from <a href="https://github.com/HMC-E155/HMC-E155">the course GitHub</a> (the link on the course website lab page) and use it to program your FPGA. This design toggles pin P25 at about 1 Hz. If you have the switch properly set on SW7, P25 is connected to PA9 and so you will see LED D3 blinking.</p>
+<p>After programming your FPGA, the next step is to upload the code to the MCU that will read the value of the toggled LED from the FPGA and echo it back on another pin. See the tutorial titled “Segger Embedded Studio Setup” to familiarize yourself with the process of installing and setting up SEGGER Embedded Studio (SES) for ARM. If you are using a lab computer, SES is already installed. Make sure that you use the ARM version of the program. The lab computers may also have other versions installed.</p>
+<p>After working through the tutorial, download the SES solution folder from the course GitHub titled “mcu_dev_board_test.zip”. Then, double click on the .emProject file or use the File → Open Solution option in SES to open the solution. This project contains a simple program that monitors the status of PA9 (which is connected to P25 through the appropriate jumper on J5. Make sure you have the jumper attached to connect PA9 to P25). Build and download the project to your MCU.</p>
+<p>Now, in addition to LED D3 (PA9/P25) blinking, you should see LED D2 (PA10/P23) and LED D7 (P38) blinking as well.</p>
+</section>
+<section id="fpga-design" class="level1">
+<h1>FPGA Design</h1>
+<p>Now it’s your turn to take the wheel and create your own design and dust off your digital design chops! Your goal is to write some Verilog modules to further test the hardware on your board and operate a 7-segment display. The system should have the following inputs and outputs:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Signal Name</th>
+<th>Signal Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>clk</code></td>
+<td>input</td>
+<td>48 MHz clock on FPGA</td>
+</tr>
+<tr class="even">
+<td><code>s[3:0]</code></td>
+<td>input</td>
+<td>the four DIP switches (on the board, SW6)</td>
+</tr>
+<tr class="odd">
+<td><code>led[2:0]</code></td>
+<td>output</td>
+<td>3 LEDs (you may use the on-board LEDs)</td>
+</tr>
+<tr class="even">
+<td><code>seg[6:0]</code></td>
+<td>output</td>
+<td>the segments of a common-anode 7-segment display</td>
+</tr>
+</tbody>
+</table>
+<p>The following tables define the relationship of the LEDs to the switches and clock.</p>
+<div class="center-table">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><code>S1</code></th>
+<th style="text-align: center;"><code>S0</code></th>
+<th style="text-align: center;"><code>led[0]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">OFF</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">ON</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">ON</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">OFF</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="center-table">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><code>S3</code></th>
+<th style="text-align: center;"><code>S2</code></th>
+<th style="text-align: center;"><code>led[1]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">OFF</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">OFF</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">OFF</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">ON</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="center-table">
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><code>led[2]</code></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Blink at 2.4 Hz</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="hint-box">
+<p><strong>Clock Generation</strong> To generate the clock for your design, use the onboard high-speed oscillator. This is the same strategy as in the FPGA testing source code you downloaded earlier to test the board. If you look at that Verilog code, you’ll notice an instantiated module called HSOSC (for High-Speed OSCillator). This module is part of the iCE40 Technology Library (see the iCE40 Technology Library document linked on the course website) and is a built-in module included with Lattice Radiant designed for controlling the internal oscillator on the iCE40 chip. You can simply copy the line from the testing program and use it in your project.</p>
+</div>
+<section id="design-and-synthesis-in-radiant" class="level3">
+<h3 class="anchored" data-anchor-id="design-and-synthesis-in-radiant">Design and Synthesis in Radiant</h3>
+<p>The 7-segment display should display a single hexadecimal digit specified by <code>s[3:0]</code>. Be sure each digit can be distinguished from other digits (e.g., b and 8 should look different). Remember that you will be using a common anode display. The anode (positive terminal) of all of the LEDs is tied to 3.3 V through a single (“common”) pin. Each segment’s cathode (negative terminal) is connected to a pin. Therefore, you will need 7 separate control signals. Remember that a logic 0 applied to the cathode will turn on the segment. The segments are defined as shown below. Let <code>seg[0]</code> be A and <code>seg[6]</code> be G.</p>
+<div id="fig-seven-segment-map" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-seven-segment-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/seven_seg_map.png" class="img-fluid figure-img" style="width:25.0%"></p>
+<figcaption>Seven-segment display segment mapping</figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-seven-segment-map-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Seven-segment display pin map
+</figcaption>
+</figure>
+</div>
+<p>Launch Lattice Radiant and start the New Project Wizard from the File or startup menu. Setup a new project for the UP5K chip following the instructions in the Lattice Radiant Tutorial on the E155 website.</p>
+<p>Choose File → New and create a SystemVerilog HDL file. Save the file as <code>lab1_xx.sv</code> in your project directory and check the box to add the file to the current project. Create modules to perform the functions described above. The 7-segment display decoder should be combinational logic. Use a reasonable amount of hierarchy. Name the top-level module <code>lab1_xx</code>. The 7-segment display code, for example, will be reused in future labs, so it should be a module of its own (for the sake of reusability you may want to put this in a separate SystemVerilog file but this is not required). Every module should begin with a comment section that includes your name and email address, the date of creation, and a brief summary of its purpose, so that somebody else can understand what the module does and get a hold of you if they need help with it. Comment the modules as appropriate.</p>
+</section>
+<section id="logic-simulation-in-modelsim" class="level3">
+<h3 class="anchored" data-anchor-id="logic-simulation-in-modelsim">Logic Simulation in ModelSim</h3>
+<p>The next step is to simulate your logic with ModelSim. Open ModelSim from Radiant from the Tools menu or the icon in the toolbar. The ModelSim window will open. Get in the habit of watching the transcript window to look for errors and to familiarize yourself with what a good run looks like. If you see errors, close ModelSim, correct your Verilog code in Radiant, and reopen ModelSim. You can also edit the file directly in ModelSim and recompile there without going through the entire synthesis pipeline in Radiant.</p>
+<div class="hint-box">
+<p><strong>Note: </strong> Some of your designs may include modules from the iCE40 Technology Library (e.g., the HSOSC module we are using to generate our clock signal). If you try to simulate a design including one of these modules, you need to be sure to include the library. When you simulate a design that includes a module from the iCE40 Technology Library, make sure that you include the library by adding under the Libraries tab of the Start Simulation window as shown below.</p>
+</div>
+<section id="starting-simulation" class="level4">
+<h4 class="anchored" data-anchor-id="starting-simulation">Starting Simulation</h4>
+<p>In ModelSim, simulate your module by choosing <code>Simulate → Start Simulation...</code>. Click on the + symbol next to the work library and select your code (<code>lab1_xx</code>).</p>
+<p>If the wave pane isn’t open, open it by choosing View → Wave. View all of the inputs and outputs of your design by selecting them in the Objects window and dragging them to the Waves window. In a more complicated design, you may wish to examine internal signals as well.</p>
+<p>Manually test your design by forcing the inputs to specific values and then advancing the simulation using “run.” In the transcript window, type:</p>
+<pre><code>force s 0000
+run 100
+force s 0001
+run 100
+force s 0010
+run 100
+...</code></pre>
+<p>You should see the led and seg outputs displaying appropriate values. Check the outputs against your expectations. If you find any discrepancies, fix the code and resimulate. A helpful shortcut to avoid restarting ModelSim is that you can edit the module by finding it under “work” in the library pane, right clicking, and choosing Edit. Make your fixes, then right click again and choose “Recompile.” Then type “restart -f” in the transcript window to restart simulation without having to set up the waveforms window again. When you return to Radiant, you’ll find your corrected code.</p>
+</section>
+</section>
+<section id="pin-assignment" class="level3">
+<h3 class="anchored" data-anchor-id="pin-assignment">Pin Assignment</h3>
+<p>Next, assign pins to relate the signal names in your Verilog code to physical pin numbers on the FPGA. Launch Tools → Device Constraint Editor. A table listing all inputs and outputs for the project should appear. Under Pin, type the pin number to associate with the given signal.</p>
+<div id="fig-pin-radiant-assignment" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-pin-radiant-assignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/radiant_pin_assignments.png" class="img-fluid figure-img"></p>
+<figcaption>Radiant pin assignments</figcaption>
+</figure>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-pin-radiant-assignment-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;10: Radiant pin assignments.
+</figcaption>
+</figure>
+</div>
+<p>The FPGA pinouts are shown in the Board Schematic. Most of the user input/output (I/O) pins are tapped out to the headers and labeled on the board silk screen. Some have special functions; for example, FPGA pin P42 is connected to LED D6.</p>
+<p>The pin numbers for the LEDs and switches are marked on the board’s silkscreen. For the outputs for the 7-segment display, you may select any I/O pins you’d like. Do make sure that these pins are not being used for other purposes.</p>
+<p>The Device Constraint Editor is also the place where you can configure the pullup resistors for the I/O pins. To do this, examine the PULLMODE column for any input pins. In your design, this will be the pins connected to s[3:0]. These should be configured with pull-up resistors to avoid invalid logic levels (the exact value is not very important. A value between 10k and 100k is generally sufficient).</p>
+</section>
+<section id="seven-segment-display-circuit" class="level3">
+<h3 class="anchored" data-anchor-id="seven-segment-display-circuit">Seven Segment Display Circuit</h3>
+<p>The 7-segment display will be used throughout the class for general output of numbers. In this lab assignment, though, it will be used to output the hexadecimal number entered by the user through the DIP switches.</p>
+<p>Each segment of the display works as an independent LED. Therefore, the same current-limiting concern with the LEDs applies to the display as to the on-board bank of LEDs. You can limit the current into each segment of the display the same way you did for the LEDs on board, adding a suitable resistor to provide roughly 5-20 mA of current. You can find resistors and other such components in the supply cabinet or in the stockroom.</p>
+<p>Consult the data sheet for the pinout of the common anode dual seven segment display. All seven segments share the same anode, which should be connected to VCC (3.3 V). Each of the segments has its own cathode, which can be pulled to 0 to turn on the segments.</p>
+<p>Be sure to turn power off before wiring circuits on your board. You can choose either side of the display to use in this lab. After deciding on which side to use, you will need to connect the VDD pin of that side (either VDD1 or VDD2) to 3.3 V. Then connect the input pins of the same side of the display to the header pins you chose. Remember to add suitable resistors between each of the inputs to the display and the header pins. These LEDs are common anode LEDs. That is, all the anodes from the LEDs are connected to a single VDD (VDD1 or VDD2). You are driving the cathode of each LED. Given this information, you might need to modify your Verilog file. Do so in the simplest way possible.</p>
+</section>
+<section id="generating-the-fpga-configuration-files" class="level3">
+<h3 class="anchored" data-anchor-id="generating-the-fpga-configuration-files">Generating the FPGA Configuration Files</h3>
+<p>Now you will synthesize your HDL into a programming file to be transferred onto the FPGA. This outputs a binary file (.bin) in your project directory that can be used to program the FPGA directly over JTAG using the onboard USB programmer. Be sure your SystemVerilog files are saved, and click the green “Play” triangle to start the synthesis process. To help sort the many messages that the compilation process generates, click a tab under the Message area to see only that type of message. If compilation is successful but generates warnings, check the Warning and Error tabs for errors relevant to your design. Warnings about incomplete I/O assignments may be ignored if you have in fact assigned all relevant I/O pins.</p>
+<p>Launch Tools → Netlist Analyzer and examine the RTL schematic of your design. This shows the logic synthesized from your Verilog design. Ensure the hardware matches your expectations.</p>
+<p>Look at the Reports tab. In the Project Summary under Resource Usage you should see a total number of registers and pins that match your expectations. Under Analysis &amp; Synthesis, you can see how the logic blocks and registers are broken down in each module. Under Fitter, the Pin-Out File should match the pin assignments you intended.</p>
+</section>
+<section id="what-to-turn-in" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-turn-in">What to Turn In</h2>
+<p>For this lab and all subsequent ones you will turn in a lab report. The report should not exceed one page of text, plus schematics, code, and anything else appropriate, such as diagrams, simulation results, or calculations. The report typically has the following sections:</p>
+<ul>
+<li><strong>Introduction</strong>: Briefly explain what was done.</li>
+<li><strong>Design and Testing Methodology</strong>: Explain how you approached the design of this assignment from both a software and a hardware standpoint (as appropriate). Include how you tested your design. These tests should convince the reader that the requirements of the assignment have been met.</li>
+<li><strong>Technical Documentation</strong>: Include your Verilog code and schematics of your circuits.
+<ul>
+<li>Quality and clarity of your code is important. Make sure it is adequately commented. Succinct code using standard idioms is best.</li>
+<li>Schematics of your breadboarded circuits should be sufficient for another engineer to understand and reconstruct the circuit on the breadboard. Always use standard symbols for standard components such as resistors, switches, transistors, diodes, etc. Give the component name or part number such that the reader could order parts and replicate your circuit, or look up components in a datasheet where necessary. The reader shouldn’t have to open you HDL synthesis program to relate your Verilog code to the schematic, and shouldn’t need to refer to a data sheet to wire external components or understand what the connections are. Don’t assume that the reader has memorized the pinouts of any chips. Therefore, you’ll need to label both the pin number and pin name for each pin you use from the FPGA board or other component (e.g., 7-segment display). There is no need to draw any of the circuitry on the board; just refer to it by the pins number and name.</li>
+</ul></li>
+<li><strong>Results and Discussion</strong>: Did you accomplish all of the prescribed tasks? If not, what are the shortcomings? How might you address them given more time? As appropriate, how did the design perform (ex. How fast/accurate/reliable was it?). Is there anything you would do differently if you were to redo the lab? Is there anything else interesting worth mentioning?</li>
+<li><strong>Conclusions</strong>: Briefly summarize what was done and how it performed.</li>
+<li>How many hours did you spend working on the lab? Any comments, suggestions, or complaints about the assignment? This will not count toward your grade, but will help refine the lab for the future.</li>
+</ul>
+<p>The report does not need to be long but should be complete. Some individual questions may not apply to this particular lab but are listed to give you a general idea of what is desired. Future reports will follow a similar format and the questions may be more applicable in these instances.</p>
+<p>Have your lab checked off by the instructor. You will need to demonstrate that the board and 7-segment display operate correctly. You will also be asked a question about some part of the lab or your board. You should be thoroughly familiar with all of the lab and the components of your board to be able to answer the question. The oral exam is typically in the form of a “Fault-Tolerance Question.” What would happen if a particular wire is broken or a pin is shorted to Vcc or GND? Be prepared for any other questions about your lab, however.</p>
+</section>
+<section id="faq-and-hints" class="level2">
+<h2 class="anchored" data-anchor-id="faq-and-hints">FAQ and Hints</h2>
+<p>If some of you are seeing issues with specific pins on your FPGA there could be a few different reasons and corre- sponding steps to take to troubleshoot.</p>
+<ul>
+<li>You could have an electrical short which is causing some pins to be electrically connected that should not due to solder bridges. Double check to make sure that the pins are isolated and not connected together by checking the resistance between the pins with a multimeter.</li>
+<li>You are trying to use a pin that is shared between the FPGA and the MCU and the MCU is not leaving that pin floating or it is driving it as an output. You can get around this by wiping the code on the MCU by uploading a file with a blank main function.</li>
+<li>You should also read through the Nucleo board documentation to see what pins have special functions that are used by default by the MCU. Hint: You likely want to stay away from using the pins that the MCU uses for serial communication by default.</li>
+</ul>
+</section>
+<section id="always-very-curious" class="level2">
+<h2 class="anchored" data-anchor-id="always-very-curious">Always Very Curious…</h2>
+<p>If you finish the lab and are interested in exploring some additional functionality of your FPGA, consider trying to write HDL to control the RGB LEDs on board the UPduino. Note that this is <strong>NOT</strong> a required part of the lab and not for credit. It is purely an exercise if you have interest!</p>
+<p>The UP5K has built in hardware for pulse-width modulation of the LED. To find details on how to use this IP, use the “Lattice Radiant Software Help” guide that is accessible from the Help menu in Radiant. In the window that opens, navigate to the section “Reference Guides &gt; FPGA Libraries Reference Guide &gt; Miscellaneous.” You can also find information about this and other hardware primitives available on the FPGA in the “iCE40 Technology Library” PDF available on the course website. However, note that (annoyingly!) the naming for the modules in this document is for the iCEcube2 software and <em>the syntax has changed</em> for Radiant. You can see the note “Migrating iCEcube2 iCE40 UltraPlus Designs to Lattice Radiant 2.0 Software” for more details.</p>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>In order for the NUCLEO board to be compatible with SEGGER, it is necessary to reflash the ST-LINK programmer with SEGGER J-Link firmware to convert it to a J-Link. This has been already taken care of on the board in your kit, but if you want to use another STM32 board with SEGGER you’ll need to follow the instructions <a href="https://www.segger.com/products/debug-probes/j-link/models/other-j-links/st-link-on-board/">here</a> to do this yourself.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
