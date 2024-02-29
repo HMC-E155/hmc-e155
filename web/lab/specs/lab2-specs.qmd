@@ -1,0 +1,13 @@
+#### Proficiency
+
+- [ ] HDL design includes only a single seven-segment decoder module.
+- [ ] Sum of the numbers on the two displays is correctly displayed for all inputs
+- [ ] Seven segment displays are same brightness regardless of how many segments are lit.
+
+#### Excellence
+
+- [ ] No noticeable bleeding of the digits between displays
+- [ ] No flickering on the individual digits
+- [ ] Current draw/sink on all FPGA pins are below the currents specified in the recommended operating conditions. Claims are backed up by calculations and reference to the appropriate items on the datasheet.
+- [ ] Digits on the seven-segment display are upright to the viewer.
+

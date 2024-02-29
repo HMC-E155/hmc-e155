@@ -1,0 +1,15 @@
+#### Proficiency
+
+- [ ] Development board is fully assembled (e.g., all parts soldered)
+- [ ] Verilog module to control LEDs and a 7-segment display written
+- [ ] FPGA programmed with Verilog code.
+- [ ] 7-segment display can display all sixteen hexadecimal digits from `0x0` through `0xF`
+- [ ] All digits are unique (e.g., `0x6` and `0xb` are different shapes)
+- [ ] DIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.)
+- [ ] LEDs display the specified logic operations properly.
+
+#### Excellence
+
+- [ ] Calculations provided to demonstrate that the current draw for each segment in the seven-segment display is within recommended operating conditions.
+- [ ] ModelSim simulation (either manually force or automatic testbench) to demonstrate that the design is working properly.
+- [ ] All digits are equally bright, regardless of the number of segments illuminated.

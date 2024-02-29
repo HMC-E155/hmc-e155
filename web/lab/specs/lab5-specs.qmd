@@ -1,0 +1,17 @@
+#### Proficiency
+
+- [ ] Design plays *Für Elise* from provided starter code
+- [ ] Note durations match the durations specified in the starter code for *Für Elise* (i.e., the tune plays at the correct tempo)
+- [ ] Individual pitches are accurate to within 1% across the frequency range (of 220-1000 Hz) (calculations should be provided in the report to verify this)
+- [ ] All rests (pauses with no sound) are played properly
+- [ ] Code uses `#define` macros for memory-mapped registers
+
+#### Excellence
+
+- [ ] Report contains accurate calculations for **minimum duration** supported
+- [ ] Report contains accurate calculations for **maximum duration** supported
+- [ ] Report contains accurate calculations for **minimum frequency** supported
+- [ ] Report contains accurate calculations for **maximum frequency** supported
+- [ ] Report provides documentation and calculations to show that the durations and pitches are correct based on the timer configuration.
+- [ ] Design contains potentiometer to control the output volume.
+- [ ] Design plays an extra composition of your choice. You need not compose the tune from scratch, it is acceptable to transpose an existing tune.

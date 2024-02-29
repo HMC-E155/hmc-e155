@@ -1,0 +1,14 @@
+{
+  "cSpell.enableFiletypes": [
+    "!quarto"
+  ],
+  "spellright.language": [
+    "en"
+  ],
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext",
+    "quarto"
+  ]
+}

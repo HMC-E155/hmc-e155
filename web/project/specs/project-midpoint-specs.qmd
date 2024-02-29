@@ -1,0 +1,24 @@
+---
+title: Project Midpoint Demo Specs
+format:
+  html: default
+  pdf: default
+---
+
+## Proficiency
+- [ ] Clear and concise written summary of current status
+- [ ] Schematics of all breadboarded circuits
+- [ ] Block diagram of system components and the interfaces between them
+- [ ] Hardware demo functioning (potentailly with some minor bugs)
+- [ ] More than 25% of the way to the final deliverable
+- [ ] Clear description of microcontroller routines
+- [ ] All external parts ordered
+
+## Excellence
+
+- [ ] All interfaces in the block diagram defined (e.g., SPI, I2C, GPIO)
+- [ ] Hardware demo functioning well
+- [ ] Writing is well organized
+- [ ] Solid grammar or spelling issues (no more than a few minor errors which do not detract from the point).
+- [ ] Completed riskiest element of the project
+- [ ] More than 50% of the way to the final deliverable

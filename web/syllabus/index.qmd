@@ -1,0 +1,210 @@
+---
+title: Course Syllabus
+format: 
+  html: default 
+---
+
+# Microprocessor-based Systems (E155)
+
+## Contact Information
+
+| Item              | Information                              |
+|-------------------|------------------------------------------|
+| Instructors:      | Prof. Josh Brake, Prof. Tina Smilkstein  |
+| Lab Assistant(s): | TBD                                      |
+| Web page:         | <http://pages.hmc.edu/brake/class/e155/> |
+| Lab Checkoff Sheet:| [Sheet Link]({{< var checkoff-gsheet-url >}}) |
+| Email list:       | eng-155 \[at\] g.hmc.edu                 |
+| Discord Server:   | See email for invite                     |
+
+Be sure to join the class Discord and check it regularly as it will be the main source of course-related communication for this semester.
+
+## Course Meeting Schedule
+
++---------------+-----------------------------------------------------------------+
+| **Name**      | **Info**                                                        |
++===============+=================================================================+
+| Lecture       | TR 1:15 - 2:30 pm                                               |
++---------------+-----------------------------------------------------------------+
+| Lab Checkoff  | TR afternoons by signup in the Digital Lab (PA B183)            |
++---------------+-----------------------------------------------------------------+
+| Office Hours  | Prof. Brake: Monday 1:10-2:00 p (Digital Lab) & by appointment\ |
+|               | Prof. Smilkstein: TBD                                           |
++---------------+-----------------------------------------------------------------+
+
+You will be working on labs on your own time and it is not required that you attend the entire scheduled lab period. Instead, sign up for a time to get your lab checked off. Please sign up for a time during your lab section. If you are unable to find a spot that works for you, see if you can swap with one of your classmates. If you are still having trouble finding a time that works for you, reach out and let me know.
+
+"Office hours" is code for "come hang out." You are encouraged to attend office hours to ask questions, get help with your labs, talk about careers and graduate school, or chat about something on your mind (whether it is related to this class, academics, or anything else). In addition to things related to Engineering, embedded systems, digital electronics, and microcontrollers, a short (but not comprehensive!) list of things I enjoy talking about are sports (MLB: NY Mets; NFL: Tennessee Titans), running/biking/hiking, life design, time management, or books/essays I'm reading. I am available more often than not, so try dropping me a line via Slack or email if you are having a problem with your lab or want to set up a time. You may also contact the lab assistant(s) for questions when I am not available.
+
+## Communication Policy
+
+Please note that I do not always respond immediately to messages. In particular I typically do not check email or Discord between 6:00 pm and 6:00 am on weeknights, and I typically do not check these at all on weekends.
+
+That said,
+
+-   Messages sent on a weekday (Monday-Friday) before 4:00 pm PT will get a response the same day.
+-   Messages sent after 4:00 pm PT Monday-Thursday will get a response the next day.
+-   Messages sent after 4:00 pm PT on Fridays or on the weekend will get a response the following Monday.
+
+## Course Learning Objectives
+
+The overarching goal of this course is to take you from a basic familiarity and knowledge of digital design with field gate programmable arrays (FPGAs) and microcontrollers programming and expand your capabilities to design, build, and test embedded systems. In particular, by the end of this course you should be able to:
+
+-   Design and implement combinational and sequential circuits on an FPGA.
+-   Use an ARM-based microcontroller to interface with the real world via sensors and actuators.
+-   Build an embedded system project of your own design from the ground up.
+-   Select appropriate embedded hardware for a given task and use the appropriate hardware for a given problem.
+-   Effectively and efficiently debug electrical systems with measurement tools such as an oscilloscope and logic analyzer.
+-   Read and understand complicated datasheets at a level that enables you to incorporate them into your designs.
+-   Clearly communicate technical results in a professional manner through oral presentations and written reports.
+
+In broad strokes, MicroPs can be divided into two halves. The first half of the class focuses on giving you fundamental embedded systems concepts in lecture which you learn by experience through seven, hands-on labs. These labs are designed to be loosely structured design projects -- you will be given information about the required specifications and some pointers on how to get started, but much of the development process is left open to you. The second half of the class is mainly focused on the project. The project gives you the opportunity to demonstrate independent and creative mastery of embedded system design in teams of two. The specific project task is very open-ended; the only requirement is that the project does something fun or useful and that it meaningfully uses both the FPGA and MCU. In addition to having a series of design review checkpoints, you will give a mid-project presentation to the class and a final presentation of your project when finished. The content of the lectures in the second half of the class focuses on exposing you to more advanced embedded systems concepts and exploring a range of various types of external hardware that may be useful to use in your project.
+
+## Teaching Philosophy
+
+### Prof. Brake
+
+The ultimate goal for this course is to help you to master the material and become skilled embedded systems developers who understand how to build a system from a set of requirements and specifications and to verify that the system meets those specifications.
+
+Here are a few of the main pedagogical concepts that you can expect to see in this course.
+
+-   **Transparent Teaching** -- you should not have to guess what you are supposed to get out of a given activity or assignment in this class. I strive to be as transparent about why we are doing what we are doing. This is most clearly articulated through explicit learning goals that accompany each lecture, lab, or project. If the purpose of anything we do in this class is ever unclear, please ask me and I will be happy to clarify it.
+-   **Psychological Safety** -- A psychologically safe environment is one where each person feels able to share their questions, concerns, or mistakes without feeling embarrassed or looked down upon by others. Building a psychologically safe classroom is a joint venture which I expect each of you to join with me in pursuing.
+-   **A Growth Mindset** -- growth can only happen when you reach the end of what you already know. Each of you coming into this class will have different levels of experience with the types of skills that are useful in this class like working with embedded systems, programming, debugging, design, etc. My goal as an instructor is to take you from wherever you are and bring you as far along in your journey as possible. To do that, I encourage each of you to ask questions and push yourself to the edge of your knowledge. It can be frustrating or embarrassing to have questions that you feel you should already have the answer to. You should take these moments as opportunities to ask questions and fill the gaps in your knowledge. In the end, having a growth mindset is strongly linked with deep curiosity about what you are learning and a realization that while being honest about the limits of your understanding might be challenging, embracing that discomfort allows you to grow and improve quickly.
+-   **Frequent, Low-stakes Testing** -- Research has shown that having frequent opportunities to assess your knowledge is a powerful way to learn and correct any misconceptions. One way that this will take place is through regular in-class quizzes and activities.
+-   **Interleaving** -- The scheduling of the material is arranged in such a way that you will return to many similar concepts throughout the semester with some time in between. The goal of this is to have you return to familiar concepts after some time away so that you reinforce the material after working on something else. This has been shown to improve long-term retention of the material (see *Small Teaching* by James Lang if you are curious in learning more).
+
+## Schedule
+| Week  | Tuesday's Class                             | Thursday's Class                       | Due                                  |
+|:----------------:|-------------------|------------------|------------------|
+| 8/27  | Intro & Analog Behavior of Digital Systems  | Combinational and Sequential Logic     | (Lab Demos)                          |
+|  9/3  | Verilog Coding                              | Synchronous Design                     | Lab 1 - Development Board Assembly   |
+| 9/10  | FPGA Documentation                          | Architecture & Assembly Review         | Lab 2 - Muxed 7-Segment Display      |
+| 9/17  | Assembly Programming                        | C Programming on an MCU                | Lab 3 - Keypad                       |
+| 9/24  | Clock Configuration                         | Timers                                 | Lab 4 - ARM Assembly Sort            |
+| 10/1  | Serial Interfaces Overview & SPI            | UART and the IoT                       | Lab 5 - Digital Audio                |
+| 10/8  | PCB Design                                  | Advanced Encryption Standard (AES)     | Lab 6 - SPI & The Internet of Things |
+| 10/15 | **Happy Fall Break! No class**              | Project Kickoff                        |                                      |
+| 10/22 | Graphics and Displays                       | Motors and Speakers                    | Lab 7 - AES & Project Proposal       |
+| 10/29 | Interrupts Pt. 1                            | Interrupts Pt. 2                       | Proposal Debriefs                    |
+| 11/5  | Presentations                               | Presentations                          |                                      |
+| 11/12 | The Fast Fourier Transform (FFT)            | Project Status Report and Demo         | Project Status Reports & Demo        |
+| 11/19 | Emerging Topics in Embedded Systems         | **Happy Thanksgiving! No class**       |                                      |
+| 11/26 | Introduction to Real Time Operating Systems | Direct Memory Access                   |                                      |
+| 12/3  | TBD                                         | Interview Questions & Life Beyond Mudd | Project Checkoffs, Report, Demo Day  |
+
+## Recommended Texts
+
+I assume you have a solid grasp of digital design at the level of E85; review Digital Design and Computer Architecture, ARM Edition ([link](https://ccl.on.worldcat.org/oclc/900028206)) if you feel rusty on a topic. We will not be closely following a textbook, but you may find The Definitive Guide to ARM® Cortex®-M3 and Cortex®-M4 Processors by Joseph Yiu to be a helpful, comprehensive reference for the microcontroller. An electronic version of the book is available through the library ([link](https://ccl.on.worldcat.org/oclc/868231734)).
+
+## Grading
+
+The grading for this class is based on a variation of specifications-grading and may be a bit different than what you have seen in other classes. If you have questions or concerns, please contact the instructors for clarification.
+
+The grade you earn in the class will be determined based the number of deliverables you successfully complete and the level of polish to which you complete them across three different bundles:
+
+1.  Labs
+2.  Project
+3.  In-class participation.
+
+Each assignment will contain a list of specifications (or specs) for two levels of completeness: proficiency and excellence.
+The list of specifications are designed to be aligned with the learning goals for the assignment. 
+The proficiency specifications will indicate the level of completeness that demonstrates that you have achieved a level of comfort with the material in the assignment such that you would be able to implement the learning outcomes in a different setting. 
+Excellence specs are above and beyond proficiency specs. 
+Meeting the excellence specs for an assignment indicates that you have not only achieved the basic level of expected knowledge of the material, but have truly understood and are able to apply the techniques with deftness.
+
+The table below describes the levels that you need to meet in each bundle (i.e., column) in order to earn the grade in the respective row. To earn the grade in a given row, you must meet **all** the criteria in that row. In other words, to get a B, you must complete the following:
+
+-   All 7 labs to the proficiency specs and 4 of those labs must meet the excellence specs.
+-   All 5 project elements must meet proficiency specs and 3 of them must meet the excellence specs.
+
+| Grade | Labs                   | Project                |
+|-------|------------------------|------------------------|
+| F     | P $\lt$ 5              | P $\lt$ 4              |
+| D     | P $\geq$ 5, E $\geq$ 1 | P $\geq$ 4             |
+| C     | P $\geq$ 6, E $\geq$ 2 | P $\geq$ 4, E $\geq$ 2 |
+| B     | P = 7, E $\geq$ 4      | P = 5, E $\geq$ 3      |
+| A     | P = 7, E $\geq$ 5      | P = 5, E $\geq$ 4      |
+
+Performance on the labs and project is weighted equally. +/- grades will be assigned for situations in which your performance falls between the conditions for each row.
+
+In-class participation is also an important part of practicing and learning this material and can help to boost your grade in the class by up to half a letter grade (e.g., from a B- to a B or B+ to an A-). As one example, if you meet the requirements for an A in the labs bundle but the requirements for a B in the project bundle, you can expect to earn either a B+ or A-. In these situations, your in-class participation is a contributing factor to split the difference between the - of the higher tier and the + of the lower tier.
+
+### Tokens
+
+In general, each deliverable must be submitted before it's due date. However, you will have several tokens which will allow you to exercise an option for an extension on an assignment or revisit a previous assignment to raise it from it's initially submitted level to a higher level of specifications.
+
+#### Extension token (quantity: 1)
+
+This token may be used for a one-week extension on any lab with no penalty. For example, you could choose to use this token to submit your lab 3 at the same time as lab 4.
+
+#### Retry tokens (quantity: 2)
+
+You may use these tokens to revise a previously submitted assignment to try to meet a higher level of specifications. These tokens may always be used to attempt to upgrade an assignment from proficiency to excellence specs. In general, they **may not** be used to reassess an assignment which did not meet proficiency specs when it was originally due. The instructors reserve the right to waive this policy at their discretion (e.g., to allow a lab which nearly meets proficiency specs by the due date to be reassessed).
+
+## Course Policies
+
+### AI Policy
+
+AI tools like ChatGPT are an emerging and active area of research. Following the public release of ChatGPT in late 2022, large language models (LLMs) hit the mainstream and have been the subject of robust conversations about how educators and students should approach these tools. AI tools, whether in the form of an LLM or something else, are likely to have an impact on your career and work as an engineer. In this class, we will be approaching AI tools with a posture of cautious engagement. The guiding principle for the use of AI tools is that these tools must be used in the spirit of the assignment.
+
+To frame the discussion about AI in this class, here are three general ways that educators are approaching AI use in their classes[^1]:
+
+[^1]: See [this article](https://marcwatkins.substack.com/p/have-an-ai-policy-so-does-everyone) from [Marc Watkins](https://marcwatkins.org) for a more in-depth discussion.
+
+1.  Ban
+2.  Embrace
+3.  Critical exploration
+
+Each of these approaches has its merits in specific circumstances. The key is to ensure that the use of the tool is aligned with the overarching learning outcomes of the course or assignment. There are some instances where AI use is not aligned with learning. For example, it is important to understand the fundamentals of how to write accurate code in a Hardware Description Language (HDL) such as the SystemVerilog language we will learn in this class. Relying on a Large Language Model (LLM) like ChatGPT to write the code for you will supplant rather than support your ability to understand the important concepts for designing digital systems. Not to mention that ChatGPT, based on my experience, [writes really bad HDL](https://chat.openai.com/share/fc5e04e7-f19b-4aec-90b2-0b3a302f41f0)![^2]
+
+[^2]: This makes sense because most of the HDL code you find on the internet is pretty lousy. Garbage in, garbage out.
+
+There are other instances where an embrace of AI is worth considering. Maybe after building your own general understanding of SystemVerilog you want to experiment with an LLM to see if it can generate a template design that you can slightly modify for a new design. In this situation, the LLM is acting more like an advanced auto-complete tool. The key is that **you** possess the expertise to be able to understand and analyze whether the output is correct. In the spirit of full embrace, you may try to have an LLM write your code for you, comment your code, or write descriptions of what the code is doing. Embracing the AI tool full on will help you to quickly generate text, but the quality of the output may end up being incorrect or of poor quality. User beware.
+
+The third approach is in the middle of the previous two, approaching AI tools like LLMs with a cautious optimism and an eye towards reflection. Here, a user embraces the tool and engages their curiosity to prototype new ways in which the tool might be useful but is continually asking questions and reflecting on the approach and how the design of the tools influences the applications for which they are well suited. By diving deeply into how these tools work, analyzing their areas of strength and weakness, and experimenting with them with an attitude of critical curiosity, one can learn how these tools might be a valuable tool in the toolkit and other situations when they are best avoided. This approach also opens up space to ask questions about the array of ethical issues that must be discussed, including but not limited to: data privacy concerns, the environmental impacts of training these systems, alignment of AI tools with human values, bias, and the potentially dangerous ways in which these tools can be used.
+
+My own approach to AI use is that when we choose to use it, we should be using it as a [ladder and not a crutch](https://joshbrake.substack.com/p/reframing-the-disruption-of-chatgpt?utm_source=%2Fsearch%2Fladder%2520crutch&utm_medium=reader2). If and when we choose to use AI tools we should use it to extend our abilities but not in a way that might create unhealthy dependencies on it (e.g., not learning foundational programming concepts because ChatGPT can write the code for you). If you use AI tools in an unhealthy way, you are likely to be doing yourself more harm than good. In this vein, it is similar to other forms of academic dishonesty that supplant the learning intended as part of a given assignment or assessment.
+
+If you have any questions or are curious about exploring AI tools in this class, please reach out and ask. Our default posture will be the third approach of reflective engagement. In most instances this means that we will avoid the use of these tools since they will often be in direct opposition to the goals of learning the fundamental concepts. If you would like to use these tools in an assignment, please reach out to me and I would be happy to talk with you about it. In general you will be required to submit a quick justification of
+
+1.  What you would like to use the tool for.
+2.  Why you think the use of AI is aligned with and not opposed to the learning goals of the assignment.
+3.  A short reflection, submitted with the assignment, on your experience using AI on the assignment and what you learned.
+
+## Lab Kit
+
+While there is not a textbook to purchase, you will need to buy a lab kit. The fee is \$75 in Claremont Cash, and should be paid by filling out the Google Form ([link](https://docs.google.com/forms/d/e/1FAIpQLSfkSvr7ZvA5IB_2lIqxKDtYl-Hh2quc9mfJ8w6jdqEOeKgECw/viewform)) which authorizes Sydney Torrey in the Engineering office to charge your Claremont Cash account. Once you have paid for your kit via the form, see Sam Abdelmuati in the stockroom to pick up your kit. If you cook your board this semester, you can buy and rebuild a replacement, but ask the instructor for help troubleshooting first. You'll also check out a large breadboard from the stockroom, and will need to return it at the end of the semester.
+
+The kit fee can be waived in cases of financial hardship. To request a waiver fill out the form here ([link](https://docs.google.com/forms/d/e/1FAIpQLScutHRsoCUwPymkoE0FGqPE0Zn2hGHWejtTKPlSqVMBmSgW7w/viewform)). Course instructors will not know about waiver requests.
+
+## Lab Access
+
+The Digital Lab (Parson B183) is available for you to use when working on your labs. The current door code will be shared on Slack when it is available. There are Windows PCs available with [SEGGER Embedded Studio for ARM](https://www.segger.com/downloads/embedded-studiohttps://www.segger.com/downloads/embedded-studio) and [Lattice Radiant](https://www.latticesemi.com/Products/DesignSoftwareAndIP/FPGAandLDS/Radiant) installed along with the drivers required to program your board. The lab also has the electronics assembly equipment needed to solder, oscilloscopes and power supplies at the lab stations, and a lab cabinet with various resistors and some of the parts like wires, seven-segment LEDs, and transistors you will need for some of your labs. You are welcome to use these while working on your lab, but please make sure to return the components to the lab cabinet when you are done.
+
+In addition, the software we will be using for programming the MCU (SEGGER Embedded Studio for ARM) and FPGA (Lattice Radiant) are free and supported on a variety of platforms if you wish to download them on your personal computer. SEGGER Embedded Studio is supported on Windows, MacOS, and Linux and Lattice Radiant is supported on Windows and Linux. If you are running MacOS, you can download and virtualize Windows using VMWare Fusion Player under a Personal Use License for free. More details and download links can be found here ([link](https://customerconnect.vmware.com/web/vmware/evalcenter?p=fusion-player-personal)).
+
+## Honor Code Violations
+
+Students in this class are expected to follow the HMC honor code. An honor code policy appears below and prescribes behavior that is considered honorable, so read those maxims and follow them closely. Any honor code violations will be handled through JB.
+
+## Honor Code Policy
+
+1.  All students enrolled in this course are bound by the HMC Honor Code. More information on the HMC Honor Code can be found in the HMC Student Handbook.
+2.  It is your responsibility to determine whether your actions adhere to the HMC Honor Code. If this document does not clarify the legitimacy of a particular action, you should contact the course instructor and request clarification.
+3.  Work you submit for individual assignments should be your own, and you should complete all assignments based on your own understanding of the underlying material. If you work with, or receive help from, another individual on an assignment, provide a written acknowledgement in complete sentences that includes the person's name and the nature of the help.
+4.  This document is not meant to be an exhaustive list of every possible Honor Code violation. Infractions not explicitly mentioned here may still violate the Honor Code.
+5.  **Boundaries of Collaboration** Verbal collaboration with other students on individual assignments is encouraged AFTER you have given serious thought to each component yourself. However, all submitted written work should be written by yourself individually, and not a collaborative effort or copied from a common source (e.g., a chalkboard). It is NOT acceptable to work on labs in lockstep with another classmate.
+6.  **Use of Computer Software** The use of graphing calculators and computer software to aid in course work is acceptable, as long as it does not substitute for an understanding of the course material.
+7.  **Use of Web Resources** The use of Internet resources to aid in course work is acceptable, as long it does not substitute for an understanding of the course material. Plagiarism and direct copying from online (or any other) sources is strictly prohibited.
+8.  **Use of Your Own Work from Previous Semesters** If you have previously attempted this course, you may resubmit your work from previous semesters as this semester's coursework, as long as you understand the underlying material.
+9.  **Use of Other Course Resources from Previous Semesters** You may not reference assignments (labs, problem sets, activities) of this course from previous semesters.
+10. **Retention of Course Resources** Assignments and exams from this course may not be committed to dorm repositories or otherwise used to help future students.
+
+## Inclusiveness and Harassment
+
+We do difficult work in this class and everyone should feel comfortable engaging with the material. We explicitly want you to feel safe doing this work, so it is worth stating that the instructors are committed to making the class a safe space for everyone regardless of race, gender, ethnicity, sexual orientation, religion, and academic history. If you feel that you are experiencing a hostile environment, speak to an instructor immediately.
+
+## Educational Accessibility
+
+HMC is committed to providing an inclusive learning environment and support for all students. Students with a disability (including mental health, chronic or temporary medical conditions) who may need some accommodation in order to fully participate in this class are encouraged to contact Educational Accessibility Services at [ability\@g.hmc.edu](mailto:ability@g.hmc.edu) to request accommodations. Students from the other Claremont Colleges should contact their home college's disability resources officer.

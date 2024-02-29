@@ -1,0 +1,20 @@
+---
+title: Lab 3 Specifications
+format:
+  html: default
+  pdf: default
+---
+
+### Lab-specific Specifications
+
+<details>
+{{< include ../specs/lab3-specs.qmd >}} 
+</details>
+
+{{< pagebreak >}}
+
+### General Specifications
+
+<details>
+{{< include  ../specs/general-lab-specs.qmd >}} 
+</details>

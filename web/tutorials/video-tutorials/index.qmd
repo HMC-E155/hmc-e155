@@ -1,0 +1,21 @@
+---
+title: Video Tutorials
+---
+
+## Monitoring Memory-mapped Registers in SEGGER Embedded Studio
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/embed/3667f6829c2c4559ab14572cc7c35d67?sid=6bfa25fa-d966-4b42-a9d8-3c0a834404da" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+## RIGOL MSO1104 Logic Analyzer Demo
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="https://www.loom.com/share/520a97c65cd04ae7ac5893041e3de3a4?sid=a8c5361d-79ca-4f1b-b88f-21839df50973" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+## Floating Point Support for `printf()` in SEGGER Embedded Studio
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="
+https://www.loom.com/share/c27d30aba2f147a1ae01e26391e328f0?sid=017f1c0f-ff7d-4ea9-a99d-17ca72262646" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+
+## Lattice LSE FSM Automatically Decode Unreachable States
+
+<div style="position: relative; padding-bottom: 62.5%; height: 0;"><iframe src="
+https://www.loom.com/share/c27d30aba2f147a1ae01e26391e328f0?sid=017f1c0f-ff7d-4ea9-a99d-17ca72262646" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>

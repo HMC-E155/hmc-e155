@@ -1,0 +1,55 @@
+---
+title: Storytelling Worksheet
+format:
+  html: default
+---
+
+Now that you've done all the hard technical work for your project, it's time for the fun part: showing it off! As part of you final project website we'll be creating short videos which showcase your project.
+
+Think of this like an elevator pitch for your project. You'll have a minute to introduce your project and highlight the key features.
+
+## Format
+
+We'll use the classic hero's arc storytelling framework for making your video sticky.
+
+![The User's Journey: Storymapping Projects That People Love, Lichaw, Donna, 2016. New York: Rosenfeld Media](images/25067761744_42392026ed_o-4.jpg){fig-align="center" width="521"}
+
+## Designing Your Story
+
+### Current State
+
+Character, what's good, goals.
+
+<br><br><br><br><br>
+
+### Problem, Trigger, or Call to Action
+
+What's the core problem your project addresses?
+
+<br><br><br><br><br>
+
+### Impediment(s)
+
+What's the gap that your project addresses?
+
+<br><br><br><br><br>
+
+### Your Project
+
+What did you build?
+
+<br><br><br><br><br>
+
+### Problem Solved, Experience, or Delight
+
+How does it solve it?
+
+<br><br><br><br><br>
+
+### Then what?
+
+What should you do next?
+
+<br><br><br><br><br>
+
+### End
