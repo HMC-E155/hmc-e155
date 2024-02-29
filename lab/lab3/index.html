@@ -224,7 +224,7 @@ window.Quarto = {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
-  <li><a href="#specs" id="toc-specs" class="nav-link" data-scroll-target="#specs">Specs</a>
+  <li><a href="#lab-3-specifications" id="toc-lab-3-specifications" class="nav-link" data-scroll-target="#lab-3-specifications">Lab 3 Specifications</a>
   <ul class="collapse">
   <li><a href="#lab-specific-specifications" id="toc-lab-specific-specifications" class="nav-link" data-scroll-target="#lab-specific-specifications">Lab-specific Specifications</a></li>
   <li><a href="#general-specifications" id="toc-general-specifications" class="nav-link" data-scroll-target="#general-specifications">General Specifications</a></li>
@@ -240,7 +240,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 3 Specifications</h1>
+<h1 class="title">Lab 3: Keypad Scanner</h1>
 </div>
 
 
@@ -257,12 +257,12 @@ window.Quarto = {
 </header>
 
 
-<section id="introduction" class="level1">
-<h1>Introduction</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this lab you will learn how to use an FPGA to scan inputs from a keypad.</p>
 </section>
-<section id="learning-objectives" class="level1">
-<h1>Learning Objectives</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h2>
 <p>By the end of this lab you will have…</p>
 <ul>
 <li>Designed a circuit interface to read a matrix keypad.</li>
@@ -270,13 +270,14 @@ window.Quarto = {
 <li>Implemented robust digital design strategies to ensure appropriate behavior with a variety of different user inputs.</li>
 </ul>
 </section>
-<section id="requirements" class="level1">
-<h1>Requirements</h1>
+<section id="requirements" class="level2">
+<h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
 <p>Design and construct a circuit on your FPGA to read a 4-by-4 matrix keypad. Display the last two hexadecimal digits pressed on your dual seven-segment display, with the most recent entry appearing at the right. The keypad and your display should be in the same orientation.</p>
 <p>Each key press should be recorded exactly once, at the time the key is pressed, no matter how long or short a time the user holds the key down. If additional keys are pressed while still holding down the first key, these inputs should be ignored. The seven-segment displays should not flicker and should be the same brightness regardless of how many segments are displayed.</p>
+<p><a href="../../lab/lab3/specs.html" target="blank">Open specifications in new tab.</a></p>
 </section>
-<section id="specs" class="level1">
-<h1>Specs</h1>
+<section id="lab-3-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="lab-3-specifications">Lab 3 Specifications</h2>
 <section id="lab-specific-specifications" class="level3">
 <h3 class="anchored" data-anchor-id="lab-specific-specifications">Lab-specific Specifications</h3>
 <details>
@@ -377,12 +378,11 @@ window.Quarto = {
 <li><label><input type="checkbox">Writeup is free of spelling and grammar issues</label></li>
 </ul>
 </section></details>
-<p><a href="../../lab/lab3/specs.html" target="blank">Open specifications in new tab.</a></p>
 </section>
 
 
-<section id="discussion" class="level1">
-<h1>Discussion</h1>
+<section id="discussion" class="level2">
+<h2 class="anchored" data-anchor-id="discussion">Discussion</h2>
 <p>A matrix keypad has four rows and four columns, connected to 8 pins, as shown below for two different models. When you press a key, the corresponding row and column are connected. Check this with a multimeter to confirm your pinout.</p>
 <div id="fig-keypad-pinout" class="quarto-figure quarto-figure-center quarto-float anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -397,8 +397,8 @@ Figure&nbsp;1: Pinout of keypads.
 <p>Mechanical switches are prone to a phenomenon called switch bounce, where the switch makes and breaks its connection repeatedly on a time scale of microseconds to a few milliseconds. You should design your system in such a way that a single keypress registers only once even if there is some momentary bounce.</p>
 <p>This is a thinking person’s lab. If you thoroughly understand the problem and design a simple scanner circuit, you can complete the lab fairly efficiently. If you go by trial and error, you may find yourself in lab indefinitely. You will need to generate rather complex stimuli to simulate your keypad scanner. Many students have been tempted to skip simulating and debug on the real hardware. Almost all have regretted it. Similarly, some students have been lured down the path of asynchronous design, at their peril.</p>
 </section>
-<section id="what-to-turn-in" class="level1">
-<h1>What to Turn In</h1>
+<section id="what-to-turn-in" class="level2">
+<h2 class="anchored" data-anchor-id="what-to-turn-in">What to Turn In</h2>
 <p>When you are done, have your lab checked off by the instructor. You should thoroughly understand how it works and what would happen if any changes were made. Turn in your lab writeup including the following information:</p>
 <ul>
 <li>Schematics of the breadboarded circuit.</li>
@@ -407,8 +407,8 @@ Figure&nbsp;1: Pinout of keypads.
 <li>How many hours did you spend on the lab? This will not count toward your grade.</li>
 </ul>
 </section>
-<section id="hints" class="level1">
-<h1>Hints</h1>
+<section id="hints" class="level2">
+<h2 class="anchored" data-anchor-id="hints">Hints</h2>
 <p>Look at your RTL schematic in your synthesis tool (<code>Tools -&gt; Netlist Analyzer</code>). Understand why your code produces the hardware you see. Be sure your combinational logic doesn’t have any registers. Be sure your logic has no latches or tristate buffers. The oscilloscope is handy for tracking down timing problems.</p>
 
 
@@ -496,7 +496,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/HMC-E155\.github\.io\/HMC-E155\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

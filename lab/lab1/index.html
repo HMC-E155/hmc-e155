@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>E155 FA23 - Lab 1: FPGA and MCU Setup and Testing</title>
+<title>E155 FA23</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -192,11 +192,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#lab-1-fpga-and-mcu-setup-and-testing" id="toc-lab-1-fpga-and-mcu-setup-and-testing" class="nav-link active" data-scroll-target="#lab-1-fpga-and-mcu-setup-and-testing">Lab 1: FPGA and MCU Setup and Testing</a>
+  <ul class="collapse">
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#specs" id="toc-specs" class="nav-link" data-scroll-target="#specs">Specs</a>
+  <li><a href="#lab-1-specifications" id="toc-lab-1-specifications" class="nav-link" data-scroll-target="#lab-1-specifications">Lab 1 Specifications</a>
   <ul class="collapse">
   <li><a href="#lab-specific-specifications" id="toc-lab-specific-specifications" class="nav-link" data-scroll-target="#lab-specific-specifications">Lab-specific Specifications</a></li>
   <li><a href="#general-specifications" id="toc-general-specifications" class="nav-link" data-scroll-target="#general-specifications">General Specifications</a></li>
@@ -221,6 +223,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#powering-via-usb" id="toc-powering-via-usb" class="nav-link" data-scroll-target="#powering-via-usb">Powering via USB</a></li>
   </ul></li>
   <li><a href="#testing-the-boards" id="toc-testing-the-boards" class="nav-link" data-scroll-target="#testing-the-boards">Testing the Boards</a></li>
+  </ul></li>
   <li><a href="#fpga-design" id="toc-fpga-design" class="nav-link" data-scroll-target="#fpga-design">FPGA Design</a>
   <ul class="collapse">
   <li><a href="#design-and-synthesis-in-radiant" id="toc-design-and-synthesis-in-radiant" class="nav-link" data-scroll-target="#design-and-synthesis-in-radiant">Design and Synthesis in Radiant</a></li>
@@ -238,25 +241,11 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Lab 1 Specifications</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-
-</header>
-
-
+<section id="lab-1-fpga-and-mcu-setup-and-testing" class="level1">
+<h1>Lab 1: FPGA and MCU Setup and Testing</h1>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
 <p>In this lab you will familiarize yourself with the microcontroller unit (MCU) and field-programmable gate array (FPGA) development boards we will be using this semester.</p>
@@ -282,8 +271,8 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/HMC-E155/HMC-E155/tree/main/lab/lab01">Starter Code from GitHub Repo</a></li>
 </ul>
 </section>
-<section id="specs" class="level2">
-<h2 class="anchored" data-anchor-id="specs">Specs</h2>
+<section id="lab-1-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="lab-1-specifications">Lab 1 Specifications</h2>
 <section id="lab-specific-specifications" class="level3">
 <h3 class="anchored" data-anchor-id="lab-specific-specifications">Lab-specific Specifications</h3>
 <details>
@@ -381,7 +370,7 @@ ul.task-list li input[type="checkbox"] {
 </section></details>
 <p><a href="../../lab/lab1/specs.html" target="blank">Open specifications in new tab.</a></p>
 </section>
-
+</section>
 
 <section id="before-you-start" class="level2">
 <h2 class="anchored" data-anchor-id="before-you-start">Before You Start</h2>
@@ -605,6 +594,7 @@ Figure&nbsp;8: Fully assembled development board.
 <p>After working through the tutorial, download the SES solution folder from the course GitHub titled “mcu_dev_board_test.zip”. Then, double click on the .emProject file or use the File → Open Solution option in SES to open the solution. This project contains a simple program that monitors the status of PA9 (which is connected to P25 through the appropriate jumper on J5. Make sure you have the jumper attached to connect PA9 to P25). Build and download the project to your MCU.</p>
 <p>Now, in addition to LED D3 (PA9/P25) blinking, you should see LED D2 (PA10/P23) and LED D7 (P38) blinking as well.</p>
 </section>
+
 <section id="fpga-design" class="level1">
 <h1>FPGA Design</h1>
 <p>Now it’s your turn to take the wheel and create your own design and dust off your digital design chops! Your goal is to write some Verilog modules to further test the hardware on your board and operate a 7-segment display. The system should have the following inputs and outputs:</p>
@@ -924,7 +914,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/HMC-E155\.github\.io\/HMC-E155\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

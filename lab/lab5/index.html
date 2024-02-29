@@ -196,7 +196,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
   <li><a href="#resources" id="toc-resources" class="nav-link" data-scroll-target="#resources">Resources</a></li>
-  <li><a href="#specs" id="toc-specs" class="nav-link" data-scroll-target="#specs">Specs</a>
+  <li><a href="#lab-5-specifications" id="toc-lab-5-specifications" class="nav-link" data-scroll-target="#lab-5-specifications">Lab 5 Specifications</a>
   <ul class="collapse">
   <li><a href="#lab-specific-specifications" id="toc-lab-specific-specifications" class="nav-link" data-scroll-target="#lab-specific-specifications">Lab-specific Specifications</a></li>
   <li><a href="#general-specifications" id="toc-general-specifications" class="nav-link" data-scroll-target="#general-specifications">General Specifications</a></li>
@@ -213,7 +213,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 5 Specifications</h1>
+<h1 class="title">Lab 5: Digital Audio</h1>
 </div>
 
 
@@ -252,9 +252,8 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="https://github.com/HMC-E155/HMC-E155/tree/main/lab/lab05">Starter Code from GitHub Repo</a></li>
 </ul>
 </section>
-<section id="specs" class="level2">
-<h2 class="anchored" data-anchor-id="specs">Specs</h2>
-<p><a href="../../lab/lab5/specs.html" target="blank">Open specifications in new tab.</a></p>
+<section id="lab-5-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="lab-5-specifications">Lab 5 Specifications</h2>
 <section id="lab-specific-specifications" class="level3">
 <h3 class="anchored" data-anchor-id="lab-specific-specifications">Lab-specific Specifications</h3>
 <details>
@@ -352,6 +351,7 @@ ul.task-list li input[type="checkbox"] {
 <li><label><input type="checkbox">Writeup is free of spelling and grammar issues</label></li>
 </ul>
 </section></details>
+<p><a href="../../lab/lab5/specs.html" target="blank">Open specifications in new tab.</a></p>
 </section>
 
 
@@ -609,7 +609,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/HMC-E155\.github\.io\/HMC-E155\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

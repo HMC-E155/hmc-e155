@@ -195,7 +195,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning Objectives</a></li>
   <li><a href="#requirements" id="toc-requirements" class="nav-link" data-scroll-target="#requirements">Requirements</a></li>
-  <li><a href="#specs" id="toc-specs" class="nav-link" data-scroll-target="#specs">Specs</a>
+  <li><a href="#lab-2-specifications" id="toc-lab-2-specifications" class="nav-link" data-scroll-target="#lab-2-specifications">Lab 2 Specifications</a>
   <ul class="collapse">
   <li><a href="#lab-specific-specifications" id="toc-lab-specific-specifications" class="nav-link" data-scroll-target="#lab-specific-specifications">Lab-specific Specifications</a></li>
   <li><a href="#general-specifications" id="toc-general-specifications" class="nav-link" data-scroll-target="#general-specifications">General Specifications</a></li>
@@ -210,7 +210,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Lab 2 Specifications</h1>
+<h1 class="title">Lab 2: Multiplexed 7-Segment Display</h1>
 </div>
 
 
@@ -244,8 +244,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="requirements">Requirements</h2>
 <p>Display two independent hexadecimal numbers on your dual seven-segment display. Use a DIP switch and four other input pins (possibly connected to a DIP switch on a breadboard) to provide the data for two hexadecimal numbers. You <strong>must</strong> use a single seven-segment decoder HDL module to drive the cathodes for both digits on the display, which therefore must be wired for multiplexed operation. Also, display the sum of the numbers on five LEDs. The seven segment display should be oriented to display the numbers upright to the viewer.</p>
 </section>
-<section id="specs" class="level2">
-<h2 class="anchored" data-anchor-id="specs">Specs</h2>
+<section id="lab-2-specifications" class="level2">
+<h2 class="anchored" data-anchor-id="lab-2-specifications">Lab 2 Specifications</h2>
 <section id="lab-specific-specifications" class="level3">
 <h3 class="anchored" data-anchor-id="lab-specific-specifications">Lab-specific Specifications</h3>
 <details>
@@ -436,7 +436,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/HMC-E155\.github\.io\/HMC-E155\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
