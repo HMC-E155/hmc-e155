@@ -184,77 +184,77 @@
   {
     "objectID": "lab/lab4/specs.html",
     "href": "lab/lab4/specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Assembly program correctly sorts an array of signed bytes.\nBrief description of sort algorithm implemented.\nSEGGER Embedded Studio debugger used to demonstrate that the test array was sorted properly.\nAssembly code includes line-by-line comments\nCode is running on MCU connected to SEGGER Embedded Studio for instructor to verify operation with a test case of their choosing.\n\n\n\n\n\nReport identifies all possible edge cases for sorting and presents testing results to verify that the design performs correctly for all the edge cases you’ve identified. You can demonstrate this by showing screenshots of the intial (src) and final (dst) arrays in the watch window or memory viewer."
   },
   {
     "objectID": "lab/lab4/specs.html#lab-4-specifications",
     "href": "lab/lab4/specs.html#lab-4-specifications",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Assembly program correctly sorts an array of signed bytes.\nBrief description of sort algorithm implemented.\nSEGGER Embedded Studio debugger used to demonstrate that the test array was sorted properly.\nAssembly code includes line-by-line comments\nCode is running on MCU connected to SEGGER Embedded Studio for instructor to verify operation with a test case of their choosing.\n\n\n\n\n\nReport identifies all possible edge cases for sorting and presents testing results to verify that the design performs correctly for all the edge cases you’ve identified. You can demonstrate this by showing screenshots of the intial (src) and final (dst) arrays in the watch window or memory viewer."
   },
   {
     "objectID": "lab/lab3/specs.html",
     "href": "lab/lab3/specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Circuit correctly reads inputs from \\(4 \\times 4\\) keypad.\nDual seven-segment display shows the last two hexadecimal digits pressed.\nMost recent numeric entry is shown on the right.\nDesign does not lock up when multiple buttons are pressed at once. (i.e., it just holds the current values on the display and functions properly again when the buttons are released.)\nDesign only registers first button press if additional buttons are pressed down while holding down one button.\nEach button press registered only once (e.g., no switch bouncing)\nSeven segment displays are same brightness regardless of how many segments are illuminated.\nDesign has no latches.\nDesign has no tristate buffers.\nReport includes state transition diagram illustrating the operation of the system.\n\n\n\n\n\nDesign uses synchronizers on asynchronous inputs to mitigate metastability.\nKeypad and seven-segment display are aligned in the same orientation (i.e., the top of the numbers on both are facing the same direction).\nState transition diagram is completely specified (i.e., all transitions between states are specified, output conditions specified in each state)\nReport includes state transition table to document the nextstate and output values for each state based on the current state and inputs.\nReport explains tradeoffs between the chosen design decisions and alternatives (e.g., why did you select a certain switch debouncing strategy and what are the tradeoffs between your chosen method and others?)."
   },
   {
     "objectID": "lab/lab3/specs.html#lab-3-specifications",
     "href": "lab/lab3/specs.html#lab-3-specifications",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Circuit correctly reads inputs from \\(4 \\times 4\\) keypad.\nDual seven-segment display shows the last two hexadecimal digits pressed.\nMost recent numeric entry is shown on the right.\nDesign does not lock up when multiple buttons are pressed at once. (i.e., it just holds the current values on the display and functions properly again when the buttons are released.)\nDesign only registers first button press if additional buttons are pressed down while holding down one button.\nEach button press registered only once (e.g., no switch bouncing)\nSeven segment displays are same brightness regardless of how many segments are illuminated.\nDesign has no latches.\nDesign has no tristate buffers.\nReport includes state transition diagram illustrating the operation of the system.\n\n\n\n\n\nDesign uses synchronizers on asynchronous inputs to mitigate metastability.\nKeypad and seven-segment display are aligned in the same orientation (i.e., the top of the numbers on both are facing the same direction).\nState transition diagram is completely specified (i.e., all transitions between states are specified, output conditions specified in each state)\nReport includes state transition table to document the nextstate and output values for each state based on the current state and inputs.\nReport explains tradeoffs between the chosen design decisions and alternatives (e.g., why did you select a certain switch debouncing strategy and what are the tradeoffs between your chosen method and others?)."
   },
   {
     "objectID": "lab/lab2/specs.html",
     "href": "lab/lab2/specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "HDL design includes only a single seven-segment decoder module.\nSum of the numbers on the two displays is correctly displayed for all inputs\nSeven segment displays are same brightness regardless of how many segments are lit.\n\n\n\n\n\nNo noticeable bleeding of the digits between displays\nNo flickering on the individual digits\nCurrent draw/sink on all FPGA pins are below the currents specified in the recommended operating conditions. Claims are backed up by calculations and reference to the appropriate items on the datasheet.\nDigits on the seven-segment display are upright to the viewer."
   },
   {
     "objectID": "lab/lab2/specs.html#lab-2-specifications",
     "href": "lab/lab2/specs.html#lab-2-specifications",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "HDL design includes only a single seven-segment decoder module.\nSum of the numbers on the two displays is correctly displayed for all inputs\nSeven segment displays are same brightness regardless of how many segments are lit.\n\n\n\n\n\nNo noticeable bleeding of the digits between displays\nNo flickering on the individual digits\nCurrent draw/sink on all FPGA pins are below the currents specified in the recommended operating conditions. Claims are backed up by calculations and reference to the appropriate items on the datasheet.\nDigits on the seven-segment display are upright to the viewer."
   },
   {
     "objectID": "lab/lab5/specs.html",
     "href": "lab/lab5/specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Design plays Für Elise from provided starter code\nNote durations match the durations specified in the starter code for Für Elise (i.e., the tune plays at the correct tempo)\nIndividual pitches are accurate to within 1% across the frequency range (of 220-1000 Hz) (calculations should be provided in the report to verify this)\nAll rests (pauses with no sound) are played properly\nCode uses #define macros for memory-mapped registers\n\n\n\n\n\nReport contains accurate calculations for minimum duration supported\nReport contains accurate calculations for maximum duration supported\nReport contains accurate calculations for minimum frequency supported\nReport contains accurate calculations for maximum frequency supported\nReport provides documentation and calculations to show that the durations and pitches are correct based on the timer configuration.\nDesign contains potentiometer to control the output volume.\nDesign plays an extra composition of your choice. You need not compose the tune from scratch, it is acceptable to transpose an existing tune."
   },
   {
     "objectID": "lab/lab5/specs.html#lab-5-specifications",
     "href": "lab/lab5/specs.html#lab-5-specifications",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Design plays Für Elise from provided starter code\nNote durations match the durations specified in the starter code for Für Elise (i.e., the tune plays at the correct tempo)\nIndividual pitches are accurate to within 1% across the frequency range (of 220-1000 Hz) (calculations should be provided in the report to verify this)\nAll rests (pauses with no sound) are played properly\nCode uses #define macros for memory-mapped registers\n\n\n\n\n\nReport contains accurate calculations for minimum duration supported\nReport contains accurate calculations for maximum duration supported\nReport contains accurate calculations for minimum frequency supported\nReport contains accurate calculations for maximum frequency supported\nReport provides documentation and calculations to show that the durations and pitches are correct based on the timer configuration.\nDesign contains potentiometer to control the output volume.\nDesign plays an extra composition of your choice. You need not compose the tune from scratch, it is acceptable to transpose an existing tune."
   },
   {
     "objectID": "lab/specs/lab3-specs.html",
     "href": "lab/specs/lab3-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nCircuit correctly reads inputs from \\(4 \\times 4\\) keypad.\nDual seven-segment display shows the last two hexadecimal digits pressed.\nMost recent numeric entry is shown on the right.\nDesign does not lock up when multiple buttons are pressed at once. (i.e., it just holds the current values on the display and functions properly again when the buttons are released.)\nDesign only registers first button press if additional buttons are pressed down while holding down one button.\nEach button press registered only once (e.g., no switch bouncing)\nSeven segment displays are same brightness regardless of how many segments are illuminated.\nDesign has no latches.\nDesign has no tristate buffers.\nReport includes state transition diagram illustrating the operation of the system.\n\n\n\nExcellence\n\nDesign uses synchronizers on asynchronous inputs to mitigate metastability.\nKeypad and seven-segment display are aligned in the same orientation (i.e., the top of the numbers on both are facing the same direction).\nState transition diagram is completely specified (i.e., all transitions between states are specified, output conditions specified in each state)\nReport includes state transition table to document the nextstate and output values for each state based on the current state and inputs.\nReport explains tradeoffs between the chosen design decisions and alternatives (e.g., why did you select a certain switch debouncing strategy and what are the tradeoffs between your chosen method and others?)."
   },
   {
     "objectID": "lab/specs/lab2-specs.html",
     "href": "lab/specs/lab2-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nHDL design includes only a single seven-segment decoder module.\nSum of the numbers on the two displays is correctly displayed for all inputs\nSeven segment displays are same brightness regardless of how many segments are lit.\n\n\n\nExcellence\n\nNo noticeable bleeding of the digits between displays\nNo flickering on the individual digits\nCurrent draw/sink on all FPGA pins are below the currents specified in the recommended operating conditions. Claims are backed up by calculations and reference to the appropriate items on the datasheet.\nDigits on the seven-segment display are upright to the viewer."
   },
   {
     "objectID": "lab/specs/lab4-specs.html",
     "href": "lab/specs/lab4-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nAssembly program correctly sorts an array of signed bytes.\nBrief description of sort algorithm implemented.\nSEGGER Embedded Studio debugger used to demonstrate that the test array was sorted properly.\nAssembly code includes line-by-line comments\nCode is running on MCU connected to SEGGER Embedded Studio for instructor to verify operation with a test case of their choosing.\n\n\n\nExcellence\n\nReport identifies all possible edge cases for sorting and presents testing results to verify that the design performs correctly for all the edge cases you’ve identified. You can demonstrate this by showing screenshots of the intial (src) and final (dst) arrays in the watch window or memory viewer."
   },
@@ -268,21 +268,21 @@
   {
     "objectID": "lab/specs/lab6-specs.html",
     "href": "lab/specs/lab6-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nDesign uses CMSIS library device templates.\nSPI library written\nSPI library can communicate with the digital temperature sensor to read the current temperature\nSystem properly handles temperatures between -10 ˚C and 30 ˚C.\nWebpage displays current temperature with units\nWebpage updates temperature when refreshed\nWebpage properly displays the LED state\nWebpage can control the LED state\n\n\n\nExcellence\n\nReport includes sample SPI transaction from logic analyzer\nSystem reads temperature values at either user-configured resolution (e.g., user can choose from 8/9/10/11/12-bit resolution on webpage)."
   },
   {
     "objectID": "lab/lab7/specs.html",
     "href": "lab/lab7/specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "AES core simulation testbench passes\nAES SPI simulation testbench passes\n\n\n\n\n\nDesign fits on FPGA hardware\nSPI communication is displayed on logic analyzer\nSystem fully operational (sends data from MCU to FPGA and FPGA sends the correct data back again)."
   },
   {
     "objectID": "lab/lab7/specs.html#lab-7-specifications",
     "href": "lab/lab7/specs.html#lab-7-specifications",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "AES core simulation testbench passes\nAES SPI simulation testbench passes\n\n\n\n\n\nDesign fits on FPGA hardware\nSPI communication is displayed on logic analyzer\nSystem fully operational (sends data from MCU to FPGA and FPGA sends the correct data back again)."
   },
@@ -303,14 +303,14 @@
   {
     "objectID": "lab/lab1/specs.html",
     "href": "lab/lab1/specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Development board is fully assembled (e.g., all parts soldered)\nVerilog module to control LEDs and a 7-segment display written\nFPGA programmed with Verilog code.\n7-segment display can display all sixteen hexadecimal digits from 0x0 through 0xF\nAll digits are unique (e.g., 0x6 and 0xb are different shapes)\nDIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.)\nLEDs display the specified logic operations properly.\n\n\n\n\n\nCalculations provided to demonstrate that the current draw for each segment in the seven-segment display is within recommended operating conditions.\nModelSim simulation (either manually force or automatic testbench) to demonstrate that the design is working properly.\nAll digits are equally bright, regardless of the number of segments illuminated."
   },
   {
     "objectID": "lab/lab1/specs.html#lab-1-specifications",
     "href": "lab/lab1/specs.html#lab-1-specifications",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Development board is fully assembled (e.g., all parts soldered)\nVerilog module to control LEDs and a 7-segment display written\nFPGA programmed with Verilog code.\n7-segment display can display all sixteen hexadecimal digits from 0x0 through 0xF\nAll digits are unique (e.g., 0x6 and 0xb are different shapes)\nDIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.)\nLEDs display the specified logic operations properly.\n\n\n\n\n\nCalculations provided to demonstrate that the current draw for each segment in the seven-segment display is within recommended operating conditions.\nModelSim simulation (either manually force or automatic testbench) to demonstrate that the design is working properly.\nAll digits are equally bright, regardless of the number of segments illuminated."
   },
@@ -681,28 +681,28 @@
   {
     "objectID": "lab/specs/lab7-specs.html",
     "href": "lab/specs/lab7-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nAES core simulation testbench passes\nAES SPI simulation testbench passes\n\n\n\nExcellence\n\nDesign fits on FPGA hardware\nSPI communication is displayed on logic analyzer\nSystem fully operational (sends data from MCU to FPGA and FPGA sends the correct data back again)."
   },
   {
     "objectID": "lab/specs/lab1-specs.html",
     "href": "lab/specs/lab1-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nDevelopment board is fully assembled (e.g., all parts soldered)\nVerilog module to control LEDs and a 7-segment display written\nFPGA programmed with Verilog code.\n7-segment display can display all sixteen hexadecimal digits from 0x0 through 0xF\nAll digits are unique (e.g., 0x6 and 0xb are different shapes)\nDIP switches to control the display are arranged so that each adjacent switch controls the next bit. (e.g., the switch for bit 0 is next to the switch for bit 1, which is next to the switch for bit 2, etc.)\nLEDs display the specified logic operations properly.\n\n\n\nExcellence\n\nCalculations provided to demonstrate that the current draw for each segment in the seven-segment display is within recommended operating conditions.\nModelSim simulation (either manually force or automatic testbench) to demonstrate that the design is working properly.\nAll digits are equally bright, regardless of the number of segments illuminated."
   },
   {
     "objectID": "lab/specs/general-lab-specs.html",
     "href": "lab/specs/general-lab-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nGeneral Schematic Specifications\n\nAll pin names labeled\nAll pin numbers labeled\nCrossing wires clearly identified as junction or unconnected\nNeat layout (e.g., clear organization and spacing)\nAll parts labeled with part number\nAll component values present\n\nBlock Diagram\n\nBlock diagram present with one block per SystemVerilog module\nEach block includes all input and output signals\n\nHDL & Code Specifications\nGeneral Formatting\n\nDescriptive filename (e.g., lab2_jb.sv)\nDescriptive variable names\nNeat formatting (e.g., standard indentation, consistent formatting for variable names (kebab-case/snake_case/camelCase/PascalCase ))\nDescriptive and clear function/module names\n\nComments\n\nComments to indicate the purpose of each function/module\n\nLab Writeup/Summary\n\nBrief (e.g., 3-5 sentence) description of the main goals of the assignment and what was done.\nExplanation of design approach. How did you go about designing and implementing the design?\nExplanation of testing approach. How did you verify your design was behaving as expected?\nStatement of whether the design meets all the requirements. If not, list the shortcomings.\nNumber of hours spent working on the lab are included.\nWriteup contains minimal spelling or grammar issues and any errors do not significantly detract from clarity of the writeup.\n(Optional) List commments or suggestions on what was particularly good about the assignment or what you think needs to change in future versions.\n\n\n\n\nExcellence\nGeneral Schematic Specifications \n\nStandard symbols used for all components where applicable\nSignals “flow” from left to right where possible (e.g., inputs on left hand side, outputs on right hand side)\nTitle block with author name, title, and date\n\nHDL & Code Specifications\nGeneral Formatting\n\nName, email, and date at the top of every file\nComment at the top of each source code file to describe what is in it\nClear and organized hierarchy (e.g., deliniation between top level modules and submodules)\n\nTestbenches\n\nTestbenches written for each individual module to demonstrate proper operation\nTestbench output included in the report\n\nLab Writeup/Summary\n\nWriteup is free of spelling and grammar issues"
   },
   {
     "objectID": "lab/specs/lab5-specs.html",
     "href": "lab/specs/lab5-specs.html",
-    "title": "E155 FA23",
+    "title": "HMC E155",
     "section": "",
     "text": "Proficiency\n\nDesign plays Für Elise from provided starter code\nNote durations match the durations specified in the starter code for Für Elise (i.e., the tune plays at the correct tempo)\nIndividual pitches are accurate to within 1% across the frequency range (of 220-1000 Hz) (calculations should be provided in the report to verify this)\nAll rests (pauses with no sound) are played properly\nCode uses #define macros for memory-mapped registers\n\n\n\nExcellence\n\nReport contains accurate calculations for minimum duration supported\nReport contains accurate calculations for maximum duration supported\nReport contains accurate calculations for minimum frequency supported\nReport contains accurate calculations for maximum frequency supported\nReport provides documentation and calculations to show that the durations and pitches are correct based on the timer configuration.\nDesign contains potentiometer to control the output volume.\nDesign plays an extra composition of your choice. You need not compose the tune from scratch, it is acceptable to transpose an existing tune."
   },
