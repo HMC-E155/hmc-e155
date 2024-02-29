@@ -5,7 +5,7 @@ project:
     browser: false
 
 website:
-  title: "E155 FA23"
+  title: "HMC E155"
   navbar:
     left:
       - href: index.qmd
