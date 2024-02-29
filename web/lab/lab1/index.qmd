@@ -1,6 +1,4 @@
----
-title: 'Lab 1: FPGA and MCU Setup and Testing'
----
+# Lab 1: FPGA and MCU Setup and Testing
 
 ## Introduction
 
@@ -24,8 +22,6 @@ Follow the steps in this guide to test your FPGA and MCU boards. Write some Veri
 ## Resources
 
 - [Starter Code from GitHub Repo]({{< var github-url >}}/tree/main/lab/lab01)
-
-## Specs
 
 {{< include ./specs.qmd >}}
 

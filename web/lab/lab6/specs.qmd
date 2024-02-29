@@ -5,6 +5,8 @@ format:
   pdf: default
 ---
 
+## Lab 6 Specifications
+
 ### Lab-specific Specifications
 
 <details>

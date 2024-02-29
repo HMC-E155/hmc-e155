@@ -31,11 +31,12 @@ In particular, this means that you are not allowed to use the CMSIS headers for 
 
 - [Starter Code from GitHub Repo]({{< var github-url >}}/tree/main/lab/lab05)
 
-## Specs
+
+{{< include ./specs.qmd >}}
 
 <a href="./specs.qmd" target="blank">Open specifications in new tab.</a>
 
-{{< include ./specs.qmd >}}
+
 
 ## Discussion
 

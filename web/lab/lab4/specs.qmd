@@ -1,9 +1,9 @@
 ---
-title: Lab 4 Specifications
 format:
   html: default
   pdf: default
 ---
+## Lab 4 Specifications
 
 ### Lab-specific Specifications
 

@@ -1,9 +1,10 @@
 ---
-title: Lab 7 Specifications
 format:
   html: default
   pdf: default
 ---
+
+## Lab 7 Specifications
 
 ### Lab-specific Specifications
 

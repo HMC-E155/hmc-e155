@@ -1,0 +1,12 @@
+---
+title: 'Admin'
+---
+
+# Syllabus
+The course syllabus can be found [here](/admin/syllabus.qmd).
+
+# In-Class Activity PDFs
+PDFs for the in-class activities/quizzes can be found in this [shared Google Drive folder](https://drive.google.com/drive/folders/1XOsiF9f2gl-b84MrDcDJJFQBtVB1N172) (g.hmc credentials required).
+
+# Lab Checkoff Schedule
+A Google Sheet for scheduling lab checkoffs can be found [here](https://docs.google.com/spreadsheets/d/1Da5N3IyfURuAmeUBfB20GiBMKoYLFA1mI1ky6IJMeSo/edit#gid=2147081132). (g.hmc credentials required)

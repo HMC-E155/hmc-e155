@@ -25,12 +25,9 @@ Send a plaintext message and key from a micro- processor to the accelerator and 
 - [AES Standard: NIST FIPS 197]({{< meta vars.aes-standard-pdf-url >}})
 - [Starter Code from GitHub Repo]({{< var github-url >}}/tree/main/lab/lab07)
 
-
-## Specs
+{{< include ./specs.qmd >}}
 
 <a href="./specs.qmd" target="blank">Open specifications in new tab.</a>
-
-{{< include ./specs.qmd >}}
 
 ## The Advanced Encryption Standard
 

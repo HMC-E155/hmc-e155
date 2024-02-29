@@ -1,9 +1,10 @@
 ---
-title: Lab 2 Specifications
 format:
   html: default
   pdf: default
 ---
+
+## Lab 2 Specifications
 
 ### Lab-specific Specifications
 

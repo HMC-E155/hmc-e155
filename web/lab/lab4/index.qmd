@@ -24,11 +24,9 @@ Write an ARM assembly-language program to sort an array of 12 signed bytes on yo
 
 - [Starter Code from GitHub Repo]({{< var github-url >}}/tree/main/lab/lab04)
 
-## Specs
+{{< include ./specs.qmd >}}
 
 <a href="./specs.qmd" target="blank">Open specifications in new tab.</a>
-
-{{< include ./specs.qmd >}}
 
 
 ## Instructions
@@ -69,8 +67,6 @@ To test your code, try various cases with the array in the `.byte...` line under
 
 
 ## What to Turn In
-
-
 
 * A short writeup of your design approach and the sort algorithm you chose to implement.
 * A copy of your assembly code file sort.s.

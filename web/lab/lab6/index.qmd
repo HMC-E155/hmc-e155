@@ -35,14 +35,12 @@ See the provided example device drivers on the course GitHub repository for an e
 
 ## Resources
 
-- [DS1722 Datasheet]({{< meta vars.aes-standard-pdf-url >}})
+- [DS1722 Datasheet]({{< meta vars.ds1722-datasheet-url >}})
 - [Starter Code from GitHub Repo]({{< var github-url >}}/tree/main/lab/lab07)
 
-## Specs
+{{< include ./specs.qmd >}}
 
 <a href="./specs.qmd" target="blank">Open specifications in new tab.</a>
-
-{{< include ./specs.qmd >}}
 
 ## ESP8266 Web Server
 
@@ -107,8 +105,6 @@ The time spent on this lab has been highly variable in the past. If SPI doesn’
 ## What to Turn In
 
 When you are done, have your lab checked off by the instructor. You should thoroughly understand how it works and what would happen if any changes were made. Turn in your lab writeup including the following information:
-
-
 
 - Schematics of the breadboarded circuit.
 - A screen capture (exported from the scope, not a photo captured using a camera) of an example SPI transaction captured on the oscilloscope/logic analyzer.

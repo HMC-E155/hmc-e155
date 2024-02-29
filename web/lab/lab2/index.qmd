@@ -18,12 +18,9 @@ By the end of this lab you will have...
 
 Display two independent hexadecimal numbers on your dual seven-segment display. Use a DIP switch and four other input pins (possibly connected to a DIP switch on a breadboard) to provide the data for two hexadecimal numbers. You **must** use a single seven-segment decoder HDL module to drive the cathodes for both digits on the display, which therefore must be wired for multiplexed operation. Also, display the sum of the numbers on five LEDs. The seven segment display should be oriented to display the numbers upright to the viewer.
 
-## Specs
-
 {{< include ./specs.qmd >}}
 
 <a href="./specs.qmd" target="blank">Open specifications in new tab.</a>
-
 
 ## Discussion
 Time-multiplexing is a technique to share a common expensive hardware resource for several purposes at different times. For example, the multicycle processor in E85 multiplexed the memory for both instruction and data access and multiplexed the ALU for data processing instructions, branch calculations, and program counter increments.
