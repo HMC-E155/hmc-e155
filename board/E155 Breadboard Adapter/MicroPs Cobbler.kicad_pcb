@@ -574,7 +574,7 @@
   (gr_text "PA12" (at 155.896725 92.586836) (layer "F.SilkS") (tstamp 63096d75-6860-4e3b-915e-047f9d12b654)
     (effects (font (size 1 1) (thickness 0.1)))
   )
-  (gr_text "E155 Breadboard Adapter FA23 v4" (at 153.416 56.388) (layer "F.SilkS") (tstamp 645f29e5-486c-44d7-9378-114994683e0a)
+  (gr_text "E155 Breadboard Adapter v4" (at 153.416 56.388) (layer "F.SilkS") (tstamp 645f29e5-486c-44d7-9378-114994683e0a)
     (effects (font (size 1.016 1.016) (thickness 0.127)))
   )
   (gr_text "+5V" (at 150.960762 115.573835) (layer "F.SilkS") (tstamp 679af32a-6936-4b39-8188-e004bc9c8dba)

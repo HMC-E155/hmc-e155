@@ -5,7 +5,7 @@
   (paper "A4")
 
   (title_block
-    (title "E155 FA23 Breadboard Adapter")
+    (title "E155 Breadboard Adapter")
     (rev "v4")
     (company "Harvey Mudd College")
     (comment 1 "jbrake@hmc.edu")
@@ -1232,7 +1232,7 @@
     (pin "8" (uuid 1cc5480b-56b7-4379-98e2-ccafc88911a7))
     (pin "9" (uuid 9a8ad8bb-d9a9-4b2b-bc88-ea6fd2676d45))
     (instances
-      (project "MicroPs Cobbler v3"
+      (project "MicroPs Cobbler"
         (path "/55992e35-fe7b-468a-9b7a-1e4dc931b904"
           (reference "J3") (unit 1)
         )
@@ -1276,7 +1276,7 @@
     (pin "8" (uuid 2c95b9a6-9c71-4108-9cde-57ddfdd2dd19))
     (pin "9" (uuid aee7520e-3bfc-435f-a66b-1dd1f5aa6a87))
     (instances
-      (project "MicroPs Cobbler v3"
+      (project "MicroPs Cobbler"
         (path "/55992e35-fe7b-468a-9b7a-1e4dc931b904"
           (reference "J1") (unit 1)
         )
@@ -1340,7 +1340,7 @@
     (pin "8" (uuid 74855e0d-40e4-4940-a544-edae9207b2ea))
     (pin "9" (uuid d68dca9b-48b3-498b-9b5f-3b3838250f82))
     (instances
-      (project "MicroPs Cobbler v3"
+      (project "MicroPs Cobbler"
         (path "/55992e35-fe7b-468a-9b7a-1e4dc931b904"
           (reference "J2") (unit 1)
         )
