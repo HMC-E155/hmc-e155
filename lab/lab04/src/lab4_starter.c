@@ -1,6 +1,6 @@
-// lab5_starter.c
-// Fur Elise, E155 Lab 5
-// Updated Fall 2021
+// lab4_starter.c
+// Fur Elise, E155 Lab 4
+// Updated Fall 2024
 
 // Pitch in Hz, duration in ms
 const int notes[][2] = {
