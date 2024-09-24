@@ -74,6 +74,11 @@ int main(void) {
   digitalWrite(PA9, 0);
   digitalWrite(PA10, 0);
 
+  // Artificial chip select signal to allow 8-bit CE-based SPI decoding on the logic analyzers.
+  pinMode(PA11, GPIO_OUTPUT);
+  digitalWrite(PA11, 1);
+
+
   // hardware accelerated encryption
   encrypt(key, plaintext, cyphertext);
   checkAnswer(key, plaintext, cyphertext);
@@ -109,12 +114,16 @@ void encrypt(char * key, char * plaintext, char * cyphertext) {
 
   // Send plaintext
   for(i = 0; i < 16; i++) {
+    digitalWrite(PA11, 1); // Arificial CE high
     spiSendReceive(plaintext[i]);
+    digitalWrite(PA11, 0); // Arificial CE low
   }
 
   // Send the key
   for(i = 0; i < 16; i++) {
+    digitalWrite(PA11, 1); // Arificial CE high
     spiSendReceive(key[i]);
+    digitalWrite(PA11, 0); // Arificial CE low
   }
 
   while(SPI1->SR & SPI_SR_BSY); // Confirm all SPI transactions are completed
@@ -124,5 +133,8 @@ void encrypt(char * key, char * plaintext, char * cyphertext) {
   while(!digitalRead(PA6));
 
   for(i = 0; i < 16; i++) {
-    cyphertext[i] = spiSendReceive(0);  }
+    digitalWrite(PA11, 1); // Arificial CE high
+    cyphertext[i] = spiSendReceive(0);  
+    digitalWrite(PA11, 0); // Arificial CE low
+  }
 }
