@@ -13,6 +13,14 @@
 //        [103:96]  [71:64] [39:32] [7:0]       S3,0    S3,1    S3,2    S3,3
 //
 //   Note that each 32-bit word is a *column* of the state, not a row.
+//
+//   How you do it is up to you. Either:
+//     - move bytes around in the 128-bit vector directly, or
+//     - turn a into a state array with your input_to_state from
+//       Exercise 1, shift each row of the array, and turn the result back
+//       into 128 bits with your state_to_output. Paste your two modules into
+//       input_to_state.sv and state_to_output.sv in this project first.
+//   The testbench only sees the 128-bit ports, so it checks both the same way.
 /////////////////////////////////////////////
 
 module shiftrows(input  logic [127:0] a,
